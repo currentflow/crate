@@ -497,6 +497,15 @@ button,
 [type=reset],
 [type=submit] {
   -webkit-appearance: button;
+  cursor: pointer;
+}
+
+button:active,
+[type=button]:active,
+[type=reset]:active,
+[type=submit]:active {
+  -webkit-appearance: button;
+  color: rgba(0,0,0,0.1);
 }
 
 button::-moz-focus-inner,
