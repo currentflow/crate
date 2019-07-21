@@ -504,7 +504,7 @@ button:active,
 [type=button]:active,
 [type=reset]:active,
 [type=submit]:active {
-  color: rgba(0,0,0,0.1);
+  color: rgba(0,0,0,0.5);
 }
 
 button::-moz-focus-inner,
