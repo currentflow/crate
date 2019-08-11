@@ -415,11 +415,7 @@ p code[highlight], div code[highlight] {
   border-radius: 0.3rem;
   vertical-align: bottom;
 }
-
-
-*:default, *:focus, *:focus-visible, *::-moz-focus-inner,
-*:hover, *:active, *:focus-within *:selected { outline: none !important; }
-  
+ 
 a,
 area,
 button,
