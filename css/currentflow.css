@@ -445,16 +445,19 @@ textarea {
   line-height: inherit;
   letter-spacing: inherit;
   padding: 0.25em 0.375em;
-  outline: none;
+  
   overflow: hidden;
   transition: all 0.2s ease;
 }
+
+*:default, *:focus, *:focus-visible, *::-moz-focus-inner,
+*:hover, *:active, *:focus-within *:selected { outline: none !important; 
+  
 button:focus,
 input:focus,
 select:focus,
 textarea:focus {
   box-shadow: inset 0 0 0 1px dodgerblue;
-  outline: none;
 }
 
 optgroup {
