@@ -416,6 +416,10 @@ p code[highlight], div code[highlight] {
   vertical-align: bottom;
 }
 
+
+*:default, *:focus, *:focus-visible, *::-moz-focus-inner,
+*:hover, *:active, *:focus-within *:selected { outline: none !important; }
+  
 a,
 area,
 button,
@@ -449,9 +453,6 @@ textarea {
   overflow: hidden;
   transition: all 0.2s ease;
 }
-
-*:default, *:focus, *:focus-visible, *::-moz-focus-inner,
-*:hover, *:active, *:focus-within *:selected { outline: none !important; 
   
 button:focus,
 input:focus,
