@@ -493,7 +493,7 @@ select {
   min-width: 3rem;
 }
 
-button, btn, [btn],
+button, .btn, [btn],
 [type=button],
 [type=reset],
 [type=submit] {
@@ -502,7 +502,7 @@ button, btn, [btn],
 }
 
 button:hover, 
-btn:hover, 
+.btn:hover, 
 [btn]:hover,
 [type=button]:hover,
 [type=reset]:hover,
@@ -511,7 +511,7 @@ btn:hover,
 }
 
 button:active, 
-btn:active, 
+.btn:active, 
 [btn]:active,
 [type=button]:active,
 [type=reset]:active,
