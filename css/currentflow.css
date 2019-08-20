@@ -493,7 +493,7 @@ select {
   min-width: 3rem;
 }
 
-button,
+button, btn, [btn],
 [type=button],
 [type=reset],
 [type=submit] {
@@ -501,11 +501,22 @@ button,
   cursor: pointer;
 }
 
-button:active,
+button:hover, 
+btn:hover, 
+[btn]:hover,
+[type=button]:hover,
+[type=reset]:hover,
+[type=submit]:hover {
+  opacity: 0.6;
+}
+
+button:active, 
+btn:active, 
+[btn]:active,
 [type=button]:active,
 [type=reset]:active,
 [type=submit]:active {
-  color: rgba(0,0,0,0.5);
+  opacity: 0.3;
 }
 
 button::-moz-focus-inner,
