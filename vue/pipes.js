@@ -1,8 +1,12 @@
 
+import Vue from "vue";
+import moment from 'moment';
+
 // #region Moment Date Pipe ====================== //
 
 // https://momentjs.com/docs/#/displaying/
 // https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js
+
 
 Vue.filter('date', function (value, format) {
   if (!value) return '';
@@ -99,8 +103,9 @@ Vue.filter('tip', function (value, num) {
 });
 
 
-Vue.filter('dollar', function (value) {
+Vue.filter('dollar', function (value, d=0) {
   if (!value) return '' ;
-  return `$${value.toFixed(2)}`;
+  value = (value * 1).toFixed(d)*1;
+  return "$" + value.toLocaleString();
 });
 // #endregion Numbers ====================== //
