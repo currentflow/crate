@@ -1,11 +1,11 @@
-
 import Vue from "vue";
 import moment from 'moment';
 
 // #region Moment Date Pipe ====================== //
 
-// https://momentjs.com/docs/#/displaying/
-// https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js
+// - https://momentjs.com/docs/#/displaying/
+// - npm install moment --save 
+// - https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js
 
 
 Vue.filter('date', function (value, format) {
