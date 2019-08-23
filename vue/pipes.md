@@ -1,6 +1,19 @@
 ## Pipes / Filters
 
-## pipes.js
+#### main.js
+```js
+import Vue from "vue";
+import App from "./App.vue";
+import "./utils/pipes";
+
+Vue.config.productionTip = false;
+
+new Vue({
+  render: h => h(App)
+}).$mount("#app");
+```
+
+#### pipes.js
 ```js
 import Vue from "vue";
 import moment from 'moment';
@@ -10,6 +23,7 @@ import moment from 'moment';
 // - https://momentjs.com/docs/#/displaying/
 // - npm install moment --save 
 // - https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js
+
 
 Vue.filter('date', function (value, format) {
   if (!value) return '';
@@ -111,4 +125,5 @@ Vue.filter('dollar', function (value, d=0) {
   return "$" + value.toLocaleString();
 });
 // #endregion Numbers ====================== //
+
 ```
