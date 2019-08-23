@@ -4,8 +4,8 @@
 ```html
 <!-- Reference symbol through component slot or icon attribute -->
 
-<svg-icon>earth</svg-icon>
-<svg-icon icon="earth"/>
+<svg-icon>arrow_back</svg-icon>
+<svg-icon icon="arrow_back"/>
 
 <!-- add `btn` class or attribute to add basic button feature styles,
                                          like cursor and hover color ... -->
