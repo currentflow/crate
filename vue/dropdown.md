@@ -6,9 +6,8 @@ from [vue-dropdowns](https://github.com/mikerodham/vue-dropdowns)
 #### Use => component.html
 ```html
 <dropdown :options="objects" 
-                :selected="objects[0]" 
-                @updateOption="updateSelected"
-                />
+          :selected="objects[0]" 
+          @updateOption="updateSelected"/>
 ```
 
 #### component.js
