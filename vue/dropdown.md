@@ -16,9 +16,9 @@ data() {
   return {
     title: "Vue!",
     objects: [
-      { name: 'Object One' },
-      { name: 'Object Two' },
-      { name: 'Object Three' }
+      { title: 'Object One' },
+      { title: 'Object Two' },
+      { title: 'Object Three' }
     ],
     selectedObject: {},
   };
