@@ -105,7 +105,6 @@ methods: {
   
   #### dropdown.css
   ```css
-  
 @import '../scss/imports';
 
 .dropdown {
@@ -162,7 +161,7 @@ methods: {
 
   .dropdown-menu {
     position: absolute;
-    top: 95%;
+    top: 100%;
     left: 0;
     right: 0;
     z-index: 100;
@@ -172,22 +171,24 @@ methods: {
     background-color: #fff;
     border-radius: 0.2rem;
     @include shadow(4);
-  
-    > li > a {
-      padding: 1rem;
-      display: block;
-      color: currentColor;
-      white-space: nowrap;
-    }
-    > li > a:hover {
-      color: var(--fg);
-      background: var(--bg);
-    }
-    > li {      
+
+    li {      
       position: relative;
       width: 100%;
       overflow: hidden;
+
+      a {
+        padding: 1rem;
+        display: block;
+        color: currentColor;
+        white-space: nowrap;
+      }
+      a:hover {
+        color: var(--fg);
+        background: var(--bg);
+      }
     }
+    
   }
   
 } // dropdown //
