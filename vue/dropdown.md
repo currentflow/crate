@@ -150,8 +150,6 @@ methods: {
         height: 0;
         position: relative;
         top: -0.1rem;
-        /* margin-left: 2px; */
-        /* vertical-align: middle; */
         border-top: 0.4rem dashed;
         border-top: 0.4rem solid;
         border-right: 0.4rem solid transparent;
