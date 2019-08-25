@@ -29,7 +29,7 @@ methods: {
     this.selectedObject = obj;
   }
 }
-
+```
 
 #### dropdown.html
 ```html
