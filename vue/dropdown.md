@@ -23,24 +23,29 @@ export default {
     return {
       title: "Vue!",
       objects: [
-        { title: 'Object One' },
-        { title: 'Object Two' },
-        { title: 'Object Three' }
+        { title: 'Object One', value: 1 },
+        { title: 'Object Two', value: 2 },
+        { title: 'Object Three', value: 3 }
       ],
       selectedObject: {},
     };
+  },
+  methods: {
+    updateSelected(obj) {
+      this.selectedObject = obj;
+      console.log(this.selectedObject.title);
+    }
   }
 };
 ```
 
 #### dropdown.html
 ```html
-<template>
   <div class='dropdown'>
     <div class="button btn" 
 			@click="showMenu = !showMenu">
       
-      <div class="title">{{selectedOption.name | titlecase}}</div>
+      <div class="title">{{selectedOption.title | titlecase}}</div>
 
       <div class="icon">arrow_drop_down</div>
     </div>
@@ -50,11 +55,10 @@ export default {
             v-for="(option, index) of options"
             :key="index" :value="option.value"
             @click="optionClick(option)">
-        {{option.name}}
+        {{option.title}}
       </div>
     </div>   
   </div>
-</template>
 ```
 
 #### dropdown.js
@@ -80,11 +84,11 @@ export default {
       setDefaults() {
         if (!this.options) {
           this.selectedOption = {
-            value: undefined, name: "no options..."
+            value: undefined, title: "no options..."
            }
         } else if (this.placeholder) {
           this.selectedOption = {
-            value: undefined, name: this.placeholder
+            value: undefined, title: this.placeholder
           }
         } else {
           this.selectedOption = this.options[0];
@@ -111,8 +115,11 @@ export default {
       grid-auto-flow: column;
       justify-content: space-between;
       align-items: center;
-      
-      padding-right: 0;   
+
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);     
+      border-radius: 0.25rem; 
+      padding: 0.5rem 1rem;
+      padding-right: 0.5rem;   
 
       .icon {
         color: var(--muted-9);
@@ -128,8 +135,8 @@ export default {
     border-radius: 0.25rem; 
     box-shadow: 0 0 0 1px rgba(0,0,0,0.1),
     0px 2px 4px -1px rgba(0,0,0,0.1),
-    0px 1px 10px 2px rgba(0,0,0,0.1);
-      padding: 0;
+    0px 1px 10px 0px rgba(0,0,0,0.1);
+    padding: 0;
     background: $backgroundColor;
       
       .option {
@@ -141,5 +148,5 @@ export default {
         }        
       }
     }
-  } // dropdown //
+  } // dropdown
   ```
