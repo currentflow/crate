@@ -12,23 +12,25 @@ from [vue-dropdowns](https://github.com/mikerodham/vue-dropdowns)
 
 #### component.js
 ```js
-data() {
-  return {
-    title: "Vue!",
-    objects: [
-      { title: 'Object One' },
-      { title: 'Object Two' },
-      { title: 'Object Three' }
-    ],
-    selectedObject: {},
-  };
-},
-methods: {
-  updateSelected(obj) {
-    console.log(obj);
-    this.selectedObject = obj;
+import dropdown from "./components/dropdown";
+
+export default {
+  name: "App",
+  components: {
+    dropdown
+  },
+  data() {
+    return {
+      title: "Vue!",
+      objects: [
+        { title: 'Object One' },
+        { title: 'Object Two' },
+        { title: 'Object Three' }
+      ],
+      selectedObject: {},
+    };
   }
-}
+};
 ```
 
 #### dropdown.html
