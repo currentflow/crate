@@ -1,0 +1,154 @@
+// forms.scss //
+
+// #region Forms ================== //
+a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  -ms-touch-action: manipulation; 
+  touch-action: manipulation; 
+}
+
+// BORDERS are being set with box-shadow //
+
+button,
+input,
+select,
+textarea {
+  background-color: transparent; 
+  background-color: rgba(255,255,255,0); 
+  border: 0 solid; 
+  outline: none;
+  margin: 0;
+  border-radius: 0.25rem; 
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.4); 
+  color: inherit; 
+  font-family: inherit; 
+  font-size: var(--h7);
+  line-height: inherit; 
+  letter-spacing: inherit; 
+  padding: 0.25em 0.375em; 
+  
+  overflow: hidden;  
+  transition: all 0.1s ease;
+}
+
+button, .btn, [btn],
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  text-transform: none;
+  -webkit-appearance: none;
+  outline: none;
+  // user-select: none;
+
+  @extend .btn;
+}
+
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+}
+
+
+
+[type="text"], [type="email"],
+[type="search"], [type="tel"],
+[type="url"], [type="password"],
+textarea {
+  min-width: 3rem;
+
+  &:focus {
+    box-shadow: inset 0 0 0 1px dodgerblue;
+  }
+}
+
+[type="search"] {
+  -webkit-appearance: textfield; 
+  outline-offset: -2px; 
+}
+
+
+
+select {
+  height: 2.583334rem;
+  display: inline-block;
+  text-transform: none;
+  -webkit-appearance: menulist-button;
+
+  @include media (640px) {
+    height: 2.576923rem;
+  }
+  @include media (800px) {
+    height: 2.571429rem;
+  }
+  @include media (1600px) {
+    height: 2.566667rem;
+  }
+}
+
+optgroup {
+ font-family: inherit;
+  font-size: var(--h7);
+ line-height: inherit;
+}
+
+
+
+
+[type=checkbox],
+[type=radio]{
+ padding: 0;
+}
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+
+
+
+legend {
+  color: inherit; 
+  display: table; 
+  max-width: 100%; 
+  white-space: normal; 
+}
+
+progress {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+ ::-webkit-search-decoration {
+   -webkit-appearance: none;
+ }
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button; 
+  font: inherit; 
+}
+
+::-webkit-input-placeholder {
+ color: inherit;
+ opacity: 0.54;
+}
+
+::-moz-focus-inner {
+ border-style: none;
+ padding: 0;
+}
+
+:-moz-focusring {
+ outline: 1px dotted $fontColor;
+}
+// #endregion Forms ================== //
+

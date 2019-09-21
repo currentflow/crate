@@ -1,0 +1,54 @@
+// helpers.scss //@at-root
+
+
+// @extend .btn; //
+.btn, [btn] {
+    cursor: pointer;
+  
+    &:hover {
+      opacity: 0.6;
+    }
+    &:active {
+      opacity: 0.3;
+    }  
+  }
+  
+  // #region Helper classes ================== //
+  
+  .upper {
+    font-kerning: normal;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+  }
+  
+  // Real small caps.
+  .small-caps {
+    font-feature-settings: 'smcp', 'kern';
+    font-kerning: normal;
+    letter-spacing: 0.1rem;
+  }
+  
+  .noMargin {
+    margin: 0;
+  }
+  
+  .active {
+    color: complement($linkColor);
+  
+    @extend .btn;
+  }
+  
+  
+  svg-icon {
+    font-size: var(--h3);
+    color: $fontColor;
+    border: none;
+    outline: none;
+    user-select: none;
+    
+    cursor: pointer;
+  
+    @extend .btn;
+  }
+  // #endregion Helper classes ================== //
+  

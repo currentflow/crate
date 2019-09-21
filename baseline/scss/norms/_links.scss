@@ -1,0 +1,19 @@
+// links.scss //
+
+// #region Links ================== //
+a {
+    color: $linkColor;
+    text-decoration: none;
+    transition: color .1s, background-color .1s;
+    background-color: transparent;
+    outline-width:0;
+  
+    @extend .btn;
+  }
+  
+  // >>>> text links.
+  p a, li a {
+    text-decoration: none;
+  }
+  // #endregion Links ================== //
+  

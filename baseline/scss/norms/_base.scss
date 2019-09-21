@@ -1,0 +1,272 @@
+// base.scss //
+
+@import './modular-scale';
+
+// #region Document ================== //
+html { 
+  font-size: var(--root);  
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  min-height: 100vh;
+}
+
+body {
+  font-size: var(--h6);
+  line-height: 2rem;
+  background-color: $backgroundColor;
+  color: $fontColor;
+
+  font-family: $sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  min-height: 100vh;
+}
+// #endregion Document ================== //
+
+
+
+// #region Headings ================== //
+h1, h2, h3, h4, h5, h6 {
+  color: $headingColor;
+  font-family: $headingFont;
+  font-feature-settings: 'dlig', 'liga', 'lnum', 'kern';
+  font-style: normal;
+  font-weight: bolder;
+}
+
+h1, .h1 {
+  font-size: var(--h1);
+  line-height: 3rem;
+}
+
+h2, .h2 {
+  font-size: var(--h2);
+  line-height: 3rem;
+}
+
+h3, .h3 {
+  font-size: var(--h3);
+  line-height: 3rem;
+}
+
+h4, .h4 {
+  font-size: var(--h4);
+  line-height: 2rem;
+}
+
+h5, .h5 {
+  font-size: var(--h5);
+  line-height: 2rem;
+}
+
+h6, .h6 {
+  font-size: var(--h6);
+  line-height: 2rem;
+}
+
+.h7 {
+  font-size: var(--h7);
+  line-height: 2rem;
+}
+
+.h8 {
+  font-size: var(--h8);
+  line-height: 2rem;
+}
+
+.h9 {
+  font-size: var(--h9);
+  line-height: 1.5rem;
+}
+// #endregion Headings ================== //
+
+
+
+
+// #region Horizontal rule ================== //
+hr {
+  background-image: linear-gradient(to bottom,rgba(0, 0, 0, 0) 50%,$muteColor 50%);
+  background-position: 0 50%;
+  background-repeat: repeat-x;
+  background-size: 100% 0.1rem;
+
+  width: 100%;
+  border: 0;
+  margin: 0 auto;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+// #endregion Horizontal rule ================== //
+
+
+
+// #region Text ================== //
+
+// >>>> Paragraphs. 
+p, blockquote {
+  margin-bottom: 1rem;
+}
+
+p {
+  font-feature-settings: 'kern', 'onum', 'liga';
+}
+
+abbr[title] {
+  border-bottom: none; 
+  text-decoration: underline; 
+  text-decoration: underline dotted; 
+}
+
+// >>>> font-style.
+b, strong, .bold {
+  font-weight: bolder;
+}
+
+dfn{
+  font-style: italic;
+}
+
+em, i, .italic {
+  font-style: italic;
+}
+
+small, .caption {
+  @extend .h8;	
+
+  font-family: $sans-serif;
+  font-style: normal;
+  font-weight: normal;
+}
+
+small {
+  line-height: 1rem;
+}
+
+sub,
+sup {
+  @extend .h8;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+.caption {
+  color: $muteColor;
+}
+
+// >>>> spacing for captions.
+h1 + .caption, .alpha + .caption, h2 + .caption, .beta + .caption, h3 + .caption, .gamma + .caption {
+  margin-top: -1rem;
+}
+
+.h4 + .caption, .h5 + .caption, .h6 + .caption {
+  margin-top: 0rem;
+}
+
+// >>>> Quotes.
+blockquote {
+
+  p {
+    border-left: 0.15rem solid $linkColor;
+    font-style: italic;
+    padding-left: 1rem;
+  }
+}
+
+details {
+  display: block;
+}
+  
+summary {
+  display: list-item;
+}
+
+template {
+  display: none;
+}
+
+[hidden] {
+  display: none;
+}
+// #endregion Text ================== //
+
+
+
+// #region Media ================== //
+img {
+  border-style: none;
+}
+
+svg:not([fill]) {
+  fill: currentColor;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+audio,
+canvas,
+audio,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+// #endregion Media ================== //
+
+
+// #region Scripting ================== //
+canvas {
+  display: inline-block;
+}
+
+template {
+  display: none;
+}
+// #endregion Scripting ================== //
+
+
+// #region Accessibility ================== //
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+[aria-controls] {
+  cursor: pointer;
+}
+
+[aria-disabled="true"],
+[disabled] {
+  cursor: not-allowed;
+}
+
+[aria-hidden="false"][hidden]:not(:focus) {
+  clip: rect(0, 0, 0, 0);
+  display: inherit;
+  position: absolute;
+}
+// #endregion Accessibility ================== //
+
+
+

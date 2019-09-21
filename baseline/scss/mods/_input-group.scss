@@ -1,0 +1,38 @@
+  // <main>
+  //   <div>main</div>
+
+  //   <div class="input-group">
+  //     <input type="text" v-model="textbox"
+  //           placeholder="textbox">
+  //     <div icon class="clear-input"
+  //       v-show="textbox.length"
+  //       v-on:click="textbox=''">close</div>
+  //     <div icon btn>search</div>
+  //   </div>
+  // </main>
+
+
+  .input-group {
+    position: relative;
+    display: inline-grid;
+    // width: 15rem;
+    grid-template-columns: 1fr auto auto;
+    grid-gap: 0.5rem;
+    align-items: center;
+    line-height: 2rem;
+    border: none;
+    box-shadow: 0 0 0 0 rgba(0,0,0,0);
+    border-bottom: 1px solid var(--muted-6);
+  
+    [type=text] {
+      box-shadow: 0 0 0 transparent;
+    }
+    
+    .clear-input {
+      // position: absolute; 
+      // right: 3rem;
+      font-size: 1.5rem;
+    }
+ 
+  } 
+  

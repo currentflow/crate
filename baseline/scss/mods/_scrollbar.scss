@@ -1,0 +1,33 @@
+// scrollbar.scss //
+
+// moz =================== //
+html {
+    -moz-scrollbar-width: thin;
+    scrollbar-width: thin;
+  }
+  
+  .main {
+    -moz-scrollbar-width: thin;
+    scrollbar-width: thin;
+  }
+  
+  // webkit =================== //
+  ::-webkit-scrollbar
+  {
+      width: 0.5rem;
+      background-color: #F5F5F5;
+  }
+  ::-webkit-scrollbar-track
+  {
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,0.1);
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.1);
+      border-radius: 0.5rem;
+      background-color: #F5F5F5;
+  }
+  ::-webkit-scrollbar-thumb
+  {
+      border-radius: 0.5rem;
+    -webkit-box-shadow: inset 0 0 3px rgba(0,0,0,.1);
+    box-shadow: inset 0 0 3px rgba(0,0,0,.1);
+      background-color: #b9b9b9;
+  }

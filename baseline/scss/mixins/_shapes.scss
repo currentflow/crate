@@ -1,0 +1,38 @@
+// shapes.scss //
+
+// #region SHAPE ================= //
+//  @include triangle(); 
+//  @include triangle(up, 1rem, #555555);
+@mixin triangle($direction: down, $size: 6px, $color: #555) {
+    width: 0;
+    height: 0;
+    @if ($direction == up) {
+       border-left: $size solid transparent;
+       border-right: $size solid transparent;
+       border-bottom: $size solid $color;
+    }
+    @else if ($direction == right) {
+       border-top: $size solid transparent;
+       border-bottom: $size solid transparent; 
+       border-left: $size solid $color;
+    }
+    @else if ($direction == down) {
+       border-left: $size solid transparent;
+       border-right: $size solid transparent;
+       border-top: $size solid $color;
+    }
+    @else { // left
+       border-top: $size solid transparent;
+       border-bottom: $size solid transparent; 
+       border-right: $size solid $color;
+    }
+  }
+  
+  
+  // @include ellipsis();
+  @mixin ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  // #endregion SHAPE ================= //
