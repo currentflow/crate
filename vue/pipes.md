@@ -36,7 +36,7 @@ Vue.filter('date', function (value, format) {
 // #region Text Casing ====================== //
 Vue.filter('titlecase', function (value) {
   if (!value) return '';
-  value = value.toString()  ;
+  value = value.toString().toLowerCase()  ;
    return value.replace(/(^|\s)\S/g, function(t) { return t.toUpperCase() });
 });
 
