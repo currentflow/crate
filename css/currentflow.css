@@ -1,25 +1,24 @@
-/* https://currentflow.github.io/crate/css/currentflow.css */
-:root {
-     --fontColor: #333333;
-     --backgroundColor: #f7f7f7;
-     --headingColor: #222222;
-     --linkColor: #1E90FF;
-     --activeColor: #ff8f1f;
-     --dangerColor: #ff1e1e;
-     --accentColor: #1effff;
-     --muted-1: rgb(51, 51, 51, 0.1);
-     --muted-2: rgb(51, 51, 51, 0.2);
-     --muted-3: rgb(51, 51, 51, 0.3);
-     --muted-4: rgb(51, 51, 51, 0.4);
-     --muted-5: rgb(51, 51, 51, 0.5);
-     --muted-6: rgb(51, 51, 51, 0.6);
-     --muted-7: rgb(51, 51, 51, 0.7);
-     --muted-8: rgb(51, 51, 51, 0.8);
-     --muted-9: rgb(51, 51, 51, 0.9) 
+:root{
+    --fontColor: #333333;
+    --backgroundColor: #f7f7f7;
+    --headingColor: #222222;
+    --linkColor: #1E90FF;
+    --activeColor: #ff8f1f;
+    --dangerColor: #ff1e1e;
+    --accentColor: #1effff;
+    --muted-1: rgb( 51, 51, 51, 0.1);
+    --muted-2: rgb( 51, 51, 51, 0.2);
+    --muted-3: rgb( 51, 51, 51, 0.3);
+    --muted-4: rgb( 51, 51, 51, 0.4);
+    --muted-5: rgb( 51, 51, 51, 0.5);
+    --muted-6: rgb( 51, 51, 51, 0.6);
+    --muted-7: rgb( 51, 51, 51, 0.7);
+    --muted-8: rgb( 51, 51, 51, 0.8);
+    --muted-9: rgb( 51, 51, 51, 0.9)
 }
 /*! largly based on normalize.css | github.com/necolas/normalize.css */
- html {
-     font-family: sans-serif;
+html{
+    font-family:sans-serif;
     -ms-text-size-adjust:100%;
     -webkit-text-size-adjust:100%;
     box-sizing:border-box;
@@ -540,29 +539,5 @@ dl dd+dt,dl li ul,dl li ol{
     opacity:0;
     height:0;
     width:0
-}
-#app{
-    position:relative;
-    height:100vh;
-    display:grid;
-    grid-template-rows:auto 1fr
-}
-header{
-    display:grid;
-    grid-template-columns:1fr auto auto;
-    justify-content:space-between;
-    align-items:center;
-    grid-gap:1rem;
-    padding:1rem 2rem;
-    --umbra: rgba(0, 0, 0, 0.1);
-    --penumbra: rgba(0, 0, 0, 0.1);
-    --ambient: rgba(0, 0, 0, 0.1);
-    transition:all 280ms cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow:0px 3px 3px -2px var(--umbra),0px 3px 4px 0px var(--penumbra),0px 1px 8px 0px var(--ambient)
-}
-main{
-    position:relative;
-    padding:1rem 2rem;
-    overflow-y:auto
 }
  
