@@ -169,7 +169,10 @@ function postfix(x) {
   if ( isNaN(Number(x)) ) {  return x }
   
   const lastDigit = x.toString().slice(-1);
+  const last2Digits = x.toString().slice(-1);
   if ( x == 0 )             { return x; }
+  else if (last2Digits > 10 && last2Digits < 14 ) { return x + th; } 
+  else if (lastDigit == 1)  { return x + 'st'; }
   else if (lastDigit == 1)  { return x + 'st'; }
   else if (lastDigit == 2)  { return x + 'nd'; }
   else if (lastDigit == 3)  { return x + 'rd'; }
