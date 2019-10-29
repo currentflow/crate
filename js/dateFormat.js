@@ -52,7 +52,6 @@ const dateFormat = function () {
 				mmmm: dF.i18n.monthNames[m + 12],
 				yy:   String(Y).slice(2),
 				yyyy: Y,
-				y: Y,
 				h:    H % 12 || 12,
 				hh:   pad(H % 12 || 12),
 				H:    H,
@@ -92,6 +91,7 @@ dateFormat.masks = {
 	isoTime:        "HH:MM:ss",
 	isoDateTime:    "yyyy-mm-dd'T'HH:MM:ss",
 	isoUtcDateTime: "UTC:yyyy-mm-dd'T'HH:MM:ss'Z'",
+	y: 		"yyyy",
 };
 
 // Internationalization strings
