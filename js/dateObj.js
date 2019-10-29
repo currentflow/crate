@@ -94,7 +94,7 @@ const dateObj = function () {
 
 // Some common format strings
 dateObj.masks = {
-	"default":      "ddd mmm dd yyyy HH:MM:ss",
+	"default":      "ddd MMM dd yyyy HH:mm:ss",
 	shortDate:      "M/d/yy",
 	mediumDate:     "MMM d, yyyy",
 	longDate:       "MMMM d, yyyy",
