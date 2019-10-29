@@ -159,3 +159,5 @@ var app = new Vue({
     this.now = Date.now(); 
   }
 })
+
+export default dateFormat;
