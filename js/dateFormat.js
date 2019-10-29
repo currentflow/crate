@@ -35,7 +35,7 @@ const dateFormat = function () {
 			d = date[_ + "Date"](),
 			D = date[_ + "Day"](),
 			m = date[_ + "Month"](),
-			y = date[_ + "FullYear"](),
+			Y = date[_ + "FullYear"](),
 			H = date[_ + "Hours"](),
 			M = date[_ + "Minutes"](),
 			s = date[_ + "Seconds"](),
@@ -50,8 +50,9 @@ const dateFormat = function () {
 				mm:   pad(m + 1),
 				mmm:  dF.i18n.monthNames[m],
 				mmmm: dF.i18n.monthNames[m + 12],
-				yy:   String(y).slice(2),
-				yyyy: y,
+				yy:   String(Y).slice(2),
+				yyyy: Y,
+				y: Y,
 				h:    H % 12 || 12,
 				hh:   pad(H % 12 || 12),
 				H:    H,
@@ -91,7 +92,6 @@ dateFormat.masks = {
 	isoTime:        "HH:MM:ss",
 	isoDateTime:    "yyyy-mm-dd'T'HH:MM:ss",
 	isoUtcDateTime: "UTC:yyyy-mm-dd'T'HH:MM:ss'Z'",
-	y:              "yyyy",
 };
 
 // Internationalization strings
