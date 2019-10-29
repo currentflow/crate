@@ -95,17 +95,17 @@ const dateObj = function () {
 // Some common format strings
 dateObj.masks = {
 	"default":      "ddd mmm dd yyyy HH:MM:ss",
-	shortDate:      "m/d/yy",
-	mediumDate:     "mmm d, yyyy",
-	longDate:       "mmmm d, yyyy",
-	fullDate:       "dddd, mmmm d, yyyy",
-	shortTime:      "h:MM tt",
-	mediumTime:     "h:MM:ss tt",
-	longTime:       "h:MM:ss tt Z",
-	isoDate:        "yyyy-mm-dd",
-	isoTime:        "HH:MM:ss",
-	isoDateTime:    "yyyy-mm-dd'T'HH:MM:ss",
-	isoUtcDateTime: "UTC:yyyy-mm-dd'T'HH:MM:ss'Z'",
+	shortDate:      "M/d/yy",
+	mediumDate:     "MMM d, yyyy",
+	longDate:       "MMMM d, yyyy",
+	fullDate:       "dddd, MMMM d, yyyy",
+	shortTime:      "h:mm tt",
+	mediumTime:     "h:mm:ss tt",
+	longTime:       "h:mm:ss tt Z",
+	isoDate:        "yyyy-MM-dd",
+	isoTime:        "HH:mm:ss",
+	isoDateTime:    "yyyy-MM-dd'T'HH:mm:ss",
+	isoUtcDateTime: "UTC:yyyy-MM-dd'T'HH:mm:ss'Z'",
 };
 
 // Internationalization strings
@@ -134,7 +134,7 @@ daysInYear = function(year=dateObj("yyyy")) {
 
 daysInMonth = function(date=dateObj()) {
   var year = dateObj(date, "yyyy")
-  var month = dateObj(date, "m");
+  var month = dateObj(date, "M");
   var numDays = [31,28,31,30,31,30,31,31,30,31,30,31];
   if (isLeapYear(dateObj(date, "yyyy")) && month === "2") {
     return 29;
@@ -145,7 +145,7 @@ daysInMonth = function(date=dateObj()) {
 dayOfYear = function(date=dateObj()) {
   let x = dateObj(date, "d")*1;
   let year = dateObj(date, "yyyy")
-  let month = dateObj(date, "m")*1;
+  let month = dateObj(date, "M")*1;
 
   // console.log(typeof(year));
   for (let i = 1; i < month; ++i) { 
