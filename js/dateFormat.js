@@ -145,19 +145,4 @@ Date.prototype.format = function (mask, utc) {
 	return dateFormat(this, mask, utc);
 };
 
-var app = new Vue({
-  el: '#app',
-  data: {
-    message: 'Vue!',
-    now: null,
-  },
-  methods: {    
-  },
-  mounted() {
-    // this.now = dateFormat("2019 2");
-    // this.now = "2019-10-29T00:47:36.125Z"; 
-    this.now = Date.now(); 
-  }
-})
 
-export default dateFormat;
