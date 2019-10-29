@@ -43,7 +43,7 @@ function dateObj(dt='') {
   const second = newDate.getSeconds(); 
   const ms = newDate.getMilliseconds();
   
-  const dateobj = {
+  export const dateobj = {
     DayOfWeek: '=======================',
     e: day.index,
     ee: ("0" + day.index).slice(-2),
