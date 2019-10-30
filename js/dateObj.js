@@ -46,9 +46,9 @@ var dateObj = function () {
 			M = date[_ + "Minutes"](),
 			s = date[_ + "Seconds"](),
 			L = date[_ + "Milliseconds"](),
-			o = utc ? 0 : date.getTimezoneOffset(),,
-      N = daysInYear(date),
-      n = daysInMonth(date),	
+		    	o = utc ? 0 : date.getTimezoneOffset(),
+		    	N = daysInYear(date),
+		    	n = daysInMonth(date),	
 			flags = {
 				d:    d,
 				dd:   pad(d),
