@@ -1,4 +1,10 @@
-var dateObj = function () {
+/*
+        dateFormat() functions from Steven Levithan 
+                  <stevenlevithan.com> 
+          I tweeked it a bit and learned alot.
+*/
+
+export const dateObj = function () {
 	var	token = /d{1,4}|M{1,4}|yy(?:yy)?|([HhmsTt])\1?|[LloSZzWwnqQ]|"[^"]*"|'[^']*'/g,
 		timezone = /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g,
 		timezoneClip = /[^-+\dA-Z]/g,
@@ -117,20 +123,20 @@ dateObj.i18n = {
 };
 
 
-isLeapYear = function(year) {
+const isLeapYear = function(year) {
   return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
 }
 
-daysInYear = function(date) { // Q
+const daysInYear = function(date) { // Q
   let year = date.getFullYear();
-  x = 365;
+  let x = 365;
   if (isLeapYear(year)) {
     x += 1;
   }
   return x;
 }
 
-daysInMonth = function(date) { // q
+const daysInMonth = function(date) { // q
   var year = date.getFullYear();
   var month = date.getMonth();  
   
@@ -142,7 +148,7 @@ daysInMonth = function(date) { // q
   return numDays[month];
 }
 
-dayOfYear = function(date) { // N
+const dayOfYear = function(date) { // N
   var dt = new Date(date);
   let x = dt.getDate();
   let month = dt.getMonth();
@@ -155,7 +161,7 @@ dayOfYear = function(date) { // N
   return x;
 }
 
-dayOfWeek = function(date) { // n
+const dayOfWeek = function(date) { // n
   var dow = date.getDay();
   if(dow === 0) {
     dow = 7;
@@ -163,7 +169,7 @@ dayOfWeek = function(date) { // n
   return dow;
 }
 
-weekOfYear = function(date) { // W
+const weekOfYear = function(date) { // W
   // Remove time components of date
   var targetThursday = new Date(date.getFullYear(), date.getMonth(), date.getDate());
 
