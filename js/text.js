@@ -41,7 +41,7 @@ var dateObj = function () {
 			s = date[_ + "Seconds"](),
       L = date[_ + "Milliseconds"](),
       o = utc ? 0 : date.getTimezoneOffset(),
-      var W = getWeek(date);
+      W = getWeek(date),
 			flags = {
 				d:    d,
 				dd:   pad(d),
