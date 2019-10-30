@@ -118,7 +118,8 @@ isLeapYear = function(year) {
   return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
 }
 
-daysInYear = function(year) { // Q
+daysInYear = function(date) { // Q
+  let year = dt.getFullYear();
   x = 365;
   if (isLeapYear(year)) {
     x += 1;
