@@ -3,7 +3,6 @@
   I changed a couple of format options
   http://blog.stevenlevithan.com/archives/date-time-format
 */
-
 var dateObj = function () {
 	var	token = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZY]|"[^"]*"|'[^']*'/g,
 		timezone = /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g,
@@ -57,8 +56,8 @@ var dateObj = function () {
 				mmm:  dF.i18n.monthNames[m],
 				mmmm: dF.i18n.monthNames[m + 12],
 				yy:   String(y).slice(2),
-        yyyy: y,
-        Y:    yyyy,
+				yyyy: y,
+				Y:    yyyy,
 				h:    H % 12 || 12,
 				hh:   pad(H % 12 || 12),
 				H:    H,
