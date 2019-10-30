@@ -40,10 +40,10 @@ const dateObj = function () {
       var	_ = utc ? "getUTC" : "get",
         d = date[_ + "Date"](),
         D = date[_ + "Day"](),
-        M = date[_ + "Month"](),
+        m = date[_ + "Month"](),
         Y = date[_ + "FullYear"](),
         H = date[_ + "Hours"](),
-        m = date[_ + "Minutes"](),
+        M = date[_ + "Minutes"](),
         s = date[_ + "Seconds"](),
         L = date[_ + "Milliseconds"](),
         O = utc ? 0 : date.getTimezoneOffset(),
@@ -55,10 +55,10 @@ const dateObj = function () {
           dd:   pad(d),
           ddd:  dF.i18n.dayNames[D],
           dddd: dF.i18n.dayNames[D + 7],
-          M:    M + 1,
-          MM:   pad(M + 1),
-          MMM:  dF.i18n.monthNames[M],
-          MMMM: dF.i18n.monthNames[M + 12],
+          m:    m + 1,
+          mm:   pad(m + 1),
+          mmm:  dF.i18n.monthNames[m],
+          mmmm: dF.i18n.monthNames[m + 12],
           yy:   String(Y).slice(2),
           yyyy: Y,
           Y:    Y,
@@ -66,8 +66,8 @@ const dateObj = function () {
           hh:   pad(H % 12 || 12),
           H:    H,
           HH:   pad(H),
-          m:    m,
-          mm:   pad(m),
+          M:    M,
+          MM:   pad(M),
           s:    s,
           ss:   pad(s),
           l:    pad(L, 3),
@@ -94,18 +94,18 @@ const dateObj = function () {
 
 // Some common format strings
 dateObj.masks = {
-	"default":      "ddd MMM dd yyyy HH:mm:ss",
-	shortDate:      "M/d/yy",
-	mediumDate:     "MMM d, yyyy",
-	longDate:       "MMMM d, yyyy",
-	fullDate:       "dddd, MMMM d, yyyy",
-	shortTime:      "h:mm tt",
-	mediumTime:     "h:mm:ss tt",
-	longTime:       "h:mm:ss tt Z",
-	isoDate:        "yyyy-MM-dd",
-	isoTime:        "HH:mm:ss",
-	isoDateTime:    "yyyy-MM-dd'T'HH:mm:ss",
-	isoUtcDateTime: "UTC:yyyy-MM-dd'T'HH:mm:ss'Z'",
+	"default":      "ddd mmm dd yyyy HH:MM:ss",
+	shortDate:      "m/d/yy",
+	mediumDate:     "mmm d, yyyy",
+	longDate:       "mmmm d, yyyy",
+	fullDate:       "dddd, mmmm d, yyyy",
+	shortTime:      "h:MM tt",
+	mediumTime:     "h:MM:ss tt",
+	longTime:       "h:MM:ss tt Z",
+	isoDate:        "yyyy-mm-dd",
+	isoTime:        "HH:MM:ss",
+	isoDateTime:    "yyyy-mm-dd'T'HH:MM:ss",
+	isoUtcDateTime: "UTC:yyyy-mm-dd'T'HH:MM:ss'Z'",
 };
 
 // Internationalization strings
@@ -134,7 +134,7 @@ daysInYear = function(year=dateObj("yyyy")) {
 
 daysInMonth = function(date=dateObj()) {
   var year = dateObj(date, "yyyy")
-  var month = dateObj(date, "M");
+  var month = dateObj(date, "m");
   var numDays = [31,28,31,30,31,30,31,31,30,31,30,31];
   if (isLeapYear(dateObj(date, "yyyy")) && month === "2") {
     return 29;
@@ -145,7 +145,7 @@ daysInMonth = function(date=dateObj()) {
 dayOfYear = function(date=dateObj()) {
   let x = dateObj(date, "d")*1;
   let year = dateObj(date, "yyyy")
-  let month = dateObj(date, "M")*1;
+  let month = dateObj(date, "m")*1;
 
   // console.log(typeof(year));
   for (let i = 1; i < month; ++i) { 
