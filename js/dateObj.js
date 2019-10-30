@@ -47,8 +47,8 @@ const dateObj = function () {
         s = date[_ + "Seconds"](),
         L = date[_ + "Milliseconds"](),
         O = utc ? 0 : date.getTimezoneOffset(),
-        W = weekOfYear(date),
-        N = dayOfWeek(date)
+        W = daysInYear(date),
+        N = dayOfYear(date)
           
         flags = {
           d:    d,
