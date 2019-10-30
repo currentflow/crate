@@ -44,7 +44,7 @@ var dateObj = function () {
 			W = weekOfYear(date),
 			w = dayOfWeek(date),
 			n = dayOfYear(date),
-			q = daysInMonth(date.getFullYear(), date.getMonth()),
+			q = daysInMonth(date),
 			Q = daysInYear(date),
 			flags = {
 				d:    d,
@@ -130,7 +130,9 @@ daysInYear = function(date) { // Q
   return x;
 }
 
-daysInMonth = function(year, month) { // q
+daysInMonth = function(date) { // q
+  var year = date.getFullYear();
+  var month = date.getMonth();  
   
   if ( isLeapYear(year) && month === 1) {  	
     return 29;
@@ -147,7 +149,8 @@ dayOfYear = function(date) { // N
   let year = dt.getFullYear();
   
   for (let i = 0; i < month; ++i) { 
-    x += daysInMonth(year, i);
+  	var d = new Date(year,i);
+    x += daysInMonth(d);
   }      
   return x;
 }
