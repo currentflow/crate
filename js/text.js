@@ -1,5 +1,5 @@
 var dateObj = function () {
-	var	token = /d{1,4}|M{1,4}|yy(?:yy)?|([HhmsTt])\1?|[LloSZzWNqQ]|"[^"]*"|'[^']*'/g,
+	var	token = /d{1,4}|M{1,4}|yy(?:yy)?|([HhmsTt])\1?|[LloSZzWwnqQ]|"[^"]*"|'[^']*'/g,
 		timezone = /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g,
 		timezoneClip = /[^-+\dA-Z]/g,
 		pad = function (val, len) {
@@ -41,8 +41,9 @@ var dateObj = function () {
 			s = date[_ + "Seconds"](),
 			L = date[_ + "Milliseconds"](),
 			z = utc ? 0 : date.getTimezoneOffset(),
-			W = getWeek(date),
-			N = dayOfYear(date),
+			W = weekOfYear(date),
+			w = dayOfWeek(date),
+			n = dayOfYear(date),
 			q = daysInMonth(date),
 			Q = daysInYear(date),
 			flags = {
@@ -75,7 +76,8 @@ var dateObj = function () {
 				S:    ["th", "st", "nd", "rd"][d % 10 > 3 ? 0 : (d % 100 - d % 10 != 10) * d % 10],
 				o:    ["th", "st", "nd", "rd"][d % 10 > 3 ? 0 : (d % 100 - d % 10 != 10) * d % 10],
 				W:    W,
-				N:    N,
+				w:    w,
+				n:    n,
 				q:    q,
 				Q:    Q
 			};
@@ -152,7 +154,7 @@ dayOfYear = function(date) { // N
   return x;
 }
 
-getDayOfWeek = function(date) { // n
+dayOfWeek = function(date) { // n
   var dow = date.getDay();
   if(dow === 0) {
     dow = 7;
@@ -160,7 +162,7 @@ getDayOfWeek = function(date) { // n
   return dow;
 }
 
-getWeek = function(date) { // W
+weekOfYear = function(date) { // W
   // Remove time components of date
   var targetThursday = new Date(date.getFullYear(), date.getMonth(), date.getDate());
 
