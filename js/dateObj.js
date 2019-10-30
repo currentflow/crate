@@ -128,7 +128,7 @@ daysInMonth = function(date=dateObj()) {
   var year = dateObj(date, "yyyy")
   var month = dateObj(date, "m");
   var numDays = [31,28,31,30,31,30,31,31,30,31,30,31];
-  if (isLeapYear(dateObj(date, "yyyy")) && month === "2") {
+  if (isLeapYear(year) && month === "2") {
     return 29;
   }
   return numDays[month-1];
