@@ -1,5 +1,5 @@
 var dateObj = function () {
-	var	token = /d{1,4}|M{1,4}|yy(?:yy)?|([HhmsTt])\1?|[LloSZWN]|"[^"]*"|'[^']*'/g,
+	var	token = /d{1,4}|M{1,4}|yy(?:yy)?|([HhmsTt])\1?|[LloSZWNqQ]|"[^"]*"|'[^']*'/g,
 		timezone = /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g,
 		timezoneClip = /[^-+\dA-Z]/g,
 		pad = function (val, len) {
@@ -41,8 +41,10 @@ var dateObj = function () {
 			s = date[_ + "Seconds"](),
 			L = date[_ + "Milliseconds"](),
 			o = utc ? 0 : date.getTimezoneOffset(),
-      W = getWeek(date),
-      N = dayOfYear(date),
+			W = getWeek(date),
+			N = dayOfYear(date),
+			q = daysInMonth,
+			Q = daysInYear,
 			flags = {
 				d:    d,
 				dd:   pad(d),
@@ -72,7 +74,9 @@ var dateObj = function () {
 				o:    (o > 0 ? "-" : "+") + pad(Math.floor(Math.abs(o) / 60) * 100 + Math.abs(o) % 60, 4),
 				S:    ["th", "st", "nd", "rd"][d % 10 > 3 ? 0 : (d % 100 - d % 10 != 10) * d % 10],
 				W:    W,
-				N:    N
+				N:    N,
+				q:    q,
+				Q:    Q
 			};
 
 		return mask.replace(token, function ($0) {
