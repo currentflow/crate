@@ -1,5 +1,5 @@
 var dateObj = function () {
-	var	token = /d{1,4}|M{1,4}|yy(?:yy)?|([HhmsTt])\1?|[LloSZWNqQ]|"[^"]*"|'[^']*'/g,
+	var	token = /d{1,4}|M{1,4}|yy(?:yy)?|([HhmsTt])\1?|[LloSZzWNqQ]|"[^"]*"|'[^']*'/g,
 		timezone = /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g,
 		timezoneClip = /[^-+\dA-Z]/g,
 		pad = function (val, len) {
@@ -40,11 +40,11 @@ var dateObj = function () {
 			m = date[_ + "Minutes"](),
 			s = date[_ + "Seconds"](),
 			L = date[_ + "Milliseconds"](),
-			o = utc ? 0 : date.getTimezoneOffset(),
+			z = utc ? 0 : date.getTimezoneOffset(),
 			W = getWeek(date),
 			N = dayOfYear(date),
-			q = daysInMonth,
-			Q = daysInYear,
+			q = daysInMonth(date),
+			Q = daysInYear(date),
 			flags = {
 				d:    d,
 				dd:   pad(d),
@@ -71,8 +71,9 @@ var dateObj = function () {
 				T:    H < 12 ? "A"  : "P",
 				TT:   H < 12 ? "AM" : "PM",
 				Z:    utc ? "UTC" : (String(date).match(timezone) || [""]).pop().replace(timezoneClip, ""),
-				o:    (o > 0 ? "-" : "+") + pad(Math.floor(Math.abs(o) / 60) * 100 + Math.abs(o) % 60, 4),
+				z:    (z > 0 ? "-" : "+") + pad(Math.floor(Math.abs(z) / 60) * 100 + Math.abs(z) % 60, 4),
 				S:    ["th", "st", "nd", "rd"][d % 10 > 3 ? 0 : (d % 100 - d % 10 != 10) * d % 10],
+				o:    ["th", "st", "nd", "rd"][d % 10 > 3 ? 0 : (d % 100 - d % 10 != 10) * d % 10],
 				W:    W,
 				N:    N,
 				q:    q,
