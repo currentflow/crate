@@ -119,7 +119,7 @@ isLeapYear = function(year) {
 }
 
 daysInYear = function(date) { // Q
-  let year = dt.getFullYear();
+  let year = date.getFullYear();
   x = 365;
   if (isLeapYear(year)) {
     x += 1;
