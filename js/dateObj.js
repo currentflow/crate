@@ -5,7 +5,7 @@
 */
 
 const dateObj = function () {
-	var	token = /d{1,4}|M{1,4}|yy(?:yy)?|([HhmsTt])\1?|[LloSZzWwnqQ]|"[^"]*"|'[^']*'/g,
+	var	token = /d{1,4}|M{1,4}|yy(?:yy)?|([HhmsTt])\1?|[LloSYZzWwnqQ]|"[^"]*"|'[^']*'/g,
 		timezone = /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g,
 		timezoneClip = /[^-+\dA-Z]/g,
 		pad = function (val, len) {
@@ -63,6 +63,7 @@ const dateObj = function () {
 				MMMM: dF.i18n.monthNames[M + 12],
 				yy:   String(y).slice(2),
 				yyyy: y,
+				Y:    y,
 				h:    H % 12 || 12,
 				hh:   pad(H % 12 || 12),
 				H:    H,
