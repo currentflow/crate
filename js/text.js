@@ -9,13 +9,13 @@
  * Accepts a date, a mask, or a date and a mask.
  * Returns a formatted version of the given date.
  * The date defaults to the current date/time.
- * The mask defaults to dateFormat.masks.default.
+ * The mask defaults to dateObj.masks.default.
  */
 
 (function(global) {
   'use strict';
 
-  var dateFormat = (function() {
+  var dateObj = (function() {
       var token = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZzWwnQq]|"[^"]*"|'[^']*'/g;
       var timezone = /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g;
       var timezoneClip = /[^-+\dA-Z]/g;
@@ -39,7 +39,7 @@
           throw TypeError('Invalid date');
         }
   
-        mask = String(dateFormat.masks[mask] || mask || dateFormat.masks['default']);
+        mask = String(dateObj.masks[mask] || mask || dateObj.masks['default']);
   
         // Allow setting the utc/gmt argument via the mask
         var maskSlice = mask.slice(0, 4);
@@ -69,12 +69,12 @@
         var flags = {
           d:    d,
           dd:   pad(d),
-          ddd:  dateFormat.i18n.dayNames[D],
-          dddd: dateFormat.i18n.dayNames[D + 7],
+          ddd:  dateObj.i18n.dayNames[D],
+          dddd: dateObj.i18n.dayNames[D + 7],
           m:    m + 1,
           mm:   pad(m + 1),
-          mmm:  dateFormat.i18n.monthNames[m],
-          mmmm: dateFormat.i18n.monthNames[m + 12],
+          mmm:  dateObj.i18n.monthNames[m],
+          mmmm: dateObj.i18n.monthNames[m + 12],
           yy:   String(y).slice(2),
           yyyy: y,
           h:    H % 12 || 12,
@@ -87,10 +87,10 @@
           ss:   pad(s),
           l:    pad(L, 3),
           L:    pad(Math.round(L / 10)),
-          t:    H < 12 ? dateFormat.i18n.timeNames[0] : dateFormat.i18n.timeNames[1],
-          tt:   H < 12 ? dateFormat.i18n.timeNames[2] : dateFormat.i18n.timeNames[3],
-          T:    H < 12 ? dateFormat.i18n.timeNames[4] : dateFormat.i18n.timeNames[5],
-          TT:   H < 12 ? dateFormat.i18n.timeNames[6] : dateFormat.i18n.timeNames[7],
+          t:    H < 12 ? dateObj.i18n.timeNames[0] : dateObj.i18n.timeNames[1],
+          tt:   H < 12 ? dateObj.i18n.timeNames[2] : dateObj.i18n.timeNames[3],
+          T:    H < 12 ? dateObj.i18n.timeNames[4] : dateObj.i18n.timeNames[5],
+          TT:   H < 12 ? dateObj.i18n.timeNames[6] : dateObj.i18n.timeNames[7],
           Z:    gmt ? 'GMT' : utc ? 'UTC' : (String(date).match(timezone) || ['']).pop().replace(timezoneClip, ''),
           z:    (z > 0 ? '-' : '+') + pad(Math.floor(Math.abs(z) / 60) * 100 + Math.abs(z) % 60, 4),
           o:    ['th', 'st', 'nd', 'rd'][d % 10 > 3 ? 0 : (d % 100 - d % 10 != 10) * d % 10],
@@ -110,7 +110,7 @@
       };
     })();
 
-  dateFormat.masks = {
+  dateObj.masks = {
     'default':               'ddd mmm dd yyyy HH:MM:ss',
     'shortDate':             'm/d/yy',
     'mediumDate':            'mmm d, yyyy',
@@ -127,7 +127,7 @@
   };
 
   // Internationalization strings
-  dateFormat.i18n = {
+  dateObj.i18n = {
     dayNames: [
       'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat',
       'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'
@@ -268,11 +268,11 @@ function kindOf(val) {
 
   if (typeof define === 'function' && define.amd) {
     define(function () {
-      return dateFormat;
+      return dateObj;
     });
   } else if (typeof exports === 'object') {
-    module.exports = dateFormat;
+    module.exports = dateObj;
   } else {
-    global.dateFormat = dateFormat;
+    global.dateObj = dateObj;
   }
 })(this);
