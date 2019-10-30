@@ -1,5 +1,5 @@
 var dateObj = function () {
-	var	token = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZW]|"[^"]*"|'[^']*'/g,
+	var	token = /d{1,4}|M{1,4}|yy(?:yy)?|([HhmsTt])\1?|[LloSZW]|"[^"]*"|'[^']*'/g,
 		timezone = /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g,
 		timezoneClip = /[^-+\dA-Z]/g,
 		pad = function (val, len) {
@@ -34,31 +34,31 @@ var dateObj = function () {
 		var	_ = utc ? "getUTC" : "get",
 			d = date[_ + "Date"](),
 			D = date[_ + "Day"](),
-			m = date[_ + "Month"](),
+			M = date[_ + "Month"](),
 			y = date[_ + "FullYear"](),
 			H = date[_ + "Hours"](),
-			M = date[_ + "Minutes"](),
+			m = date[_ + "Minutes"](),
 			s = date[_ + "Seconds"](),
-      L = date[_ + "Milliseconds"](),
-      o = utc ? 0 : date.getTimezoneOffset(),
-      W = getWeek(date),
+			L = date[_ + "Milliseconds"](),
+			o = utc ? 0 : date.getTimezoneOffset(),
+			W = getWeek(date),
 			flags = {
 				d:    d,
 				dd:   pad(d),
 				ddd:  dF.i18n.dayNames[D],
 				dddd: dF.i18n.dayNames[D + 7],
-				m:    m + 1,
-				mm:   pad(m + 1),
-				mmm:  dF.i18n.monthNames[m],
-				mmmm: dF.i18n.monthNames[m + 12],
+				M:    M + 1,
+				MM:   pad(M + 1),
+				MMM:  dF.i18n.monthNames[M],
+				MMMM: dF.i18n.monthNames[M + 12],
 				yy:   String(y).slice(2),
 				yyyy: y,
 				h:    H % 12 || 12,
 				hh:   pad(H % 12 || 12),
 				H:    H,
 				HH:   pad(H),
-				M:    M,
-				MM:   pad(M),
+				m:    m,
+				mm:   pad(m),
 				s:    s,
 				ss:   pad(s),
 				l:    pad(L, 3),
@@ -69,8 +69,8 @@ var dateObj = function () {
 				TT:   H < 12 ? "AM" : "PM",
 				Z:    utc ? "UTC" : (String(date).match(timezone) || [""]).pop().replace(timezoneClip, ""),
 				o:    (o > 0 ? "-" : "+") + pad(Math.floor(Math.abs(o) / 60) * 100 + Math.abs(o) % 60, 4),
-        S:    ["th", "st", "nd", "rd"][d % 10 > 3 ? 0 : (d % 100 - d % 10 != 10) * d % 10],
-        W:    W
+				S:    ["th", "st", "nd", "rd"][d % 10 > 3 ? 0 : (d % 100 - d % 10 != 10) * d % 10],
+				W:    W
 			};
 
 		return mask.replace(token, function ($0) {
@@ -81,18 +81,18 @@ var dateObj = function () {
 
 // Some common format strings
 dateObj.masks = {
-	"default":      "ddd mmm dd yyyy HH:MM:ss",
-	shortDate:      "m/d/yy",
-	mediumDate:     "mmm d, yyyy",
-	longDate:       "mmmm d, yyyy",
-	fullDate:       "dddd, mmmm d, yyyy",
-	shortTime:      "h:MM tt",
-	mediumTime:     "h:MM:ss tt",
-	longTime:       "h:MM:ss tt Z",
-	isoDate:        "yyyy-mm-dd",
-	isoTime:        "HH:MM:ss",
-	isoDateTime:    "yyyy-mm-dd'T'HH:MM:ss",
-	isoUtcDateTime: "UTC:yyyy-mm-dd'T'HH:MM:ss'Z'"
+	"default":      "ddd MMM dd yyyy HH:mm:ss",
+	shortDate:      "M/d/yy",
+	mediumDate:     "MMM d, yyyy",
+	longDate:       "MMMM d, yyyy",
+	fullDate:       "dddd, MMMM d, yyyy",
+	shortTime:      "h:mm tt",
+	mediumTime:     "h:mm:ss tt",
+	longTime:       "h:mm:ss tt Z",
+	isoDate:        "yyyy-MM-dd",
+	isoTime:        "HH:mm:ss",
+	isoDateTime:    "yyyy-MM-dd'T'HH:mm:ss",
+	isoUtcDateTime: "UTC:yyyy-MM-dd'T'HH:mm:ss'Z'"
 };
 
 // Internationalization strings
@@ -121,7 +121,7 @@ daysInYear = function(year=dateObj("yyyy")) {
 
 daysInMonth = function(date=dateObj()) {
   var year = dateObj(date, "yyyy")
-  var month = dateObj(date, "m");
+  var month = dateObj(date, "M");
   var numDays = [31,28,31,30,31,30,31,31,30,31,30,31];
   if (isLeapYear(year) && month === "2") {
     return 29;
@@ -132,7 +132,7 @@ daysInMonth = function(date=dateObj()) {
 dayOfYear = function(date=dateObj()) {
   let x = dateObj(date, "d")*1;
   let year = dateObj(date, "yyyy")
-  let month = dateObj(date, "m")*1;
+  let month = dateObj(date, "M")*1;
 
   // console.log(typeof(year));
   for (let i = 1; i < month; ++i) { 
