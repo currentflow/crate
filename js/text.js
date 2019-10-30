@@ -44,7 +44,7 @@ var dateObj = function () {
 			W = weekOfYear(date),
 			w = dayOfWeek(date),
 			n = dayOfYear(date),
-			q = daysInMonth(date),
+			q = daysInMonth(date.getFullYear(), date.getMonth()),
 			Q = daysInYear(date),
 			flags = {
 				d:    d,
