@@ -107,11 +107,11 @@ dateObj.i18n = {
 	]
 };
 
-isLeapYear = function(year=dateObj("yyyy")) {
+isLeapYear = function(year) {
   return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
 }
 
-daysInYear = function(year=dateObj("yyyy")) {
+daysInYear = function(year) { // Q
   x = 365;
   if (isLeapYear(year)) {
     x += 1;
@@ -119,9 +119,10 @@ daysInYear = function(year=dateObj("yyyy")) {
   return x;
 }
 
-daysInMonth = function(date=dateObj()) {
-  var year = dateObj(date, "yyyy")
-  var month = dateObj(date, "M");
+daysInMonth = function(date) { // q
+  var dt = new Date(date);
+  let month = dt.getMonth();
+  let year = dt.getFullYear();
   var numDays = [31,28,31,30,31,30,31,31,30,31,30,31];
   if (isLeapYear(year) && month === "2") {
     return 29;
@@ -129,14 +130,16 @@ daysInMonth = function(date=dateObj()) {
   return numDays[month-1];
 }
 
-dayOfYear = function(date=dateObj()) {
-  let x = dateObj(date, "d")*1;
-  let year = dateObj(date, "yyyy")
-  let month = dateObj(date, "M")*1;
+dayOfYear = function(date) { // N
+  var dt = new Date(date);
+  let x = dt.getDate();
+  let month = dt.getMonth();
+  let year = dt.getFullYear();
+  
 
   // console.log(typeof(year));
   for (let i = 1; i < month; ++i) { 
-    x += daysInMonth(dateObj( year +" " +  i.toString() ));
+    x += daysInMonth(dt);
   }      
   return x;
 }
