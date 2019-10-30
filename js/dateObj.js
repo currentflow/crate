@@ -5,7 +5,7 @@
 */
 
 var dateObj = function () {
-	var	token = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZNn]|"[^"]*"|'[^']*'/g,
+	var	token = /d{1,4}|m{1,4}|yy(?:yy)?|([HhMsTt])\1?|[LloSZ]|"[^"]*"|'[^']*'/g,
 		timezone = /\b(?:[PMCEA][SDP]T|(?:Pacific|Mountain|Central|Eastern|Atlantic) (?:Standard|Daylight|Prevailing) Time|(?:GMT|UTC)(?:[-+]\d{4})?)\b/g,
 		timezoneClip = /[^-+\dA-Z]/g,
 		pad = function (val, len) {
@@ -46,9 +46,9 @@ var dateObj = function () {
 			M = date[_ + "Minutes"](),
 			s = date[_ + "Seconds"](),
 			L = date[_ + "Milliseconds"](),
-			o = utc ? 0 : date.getTimezoneOffset(),
-		    	N = daysInYear(date),
-			n = daysInMonth(date),	
+			o = utc ? 0 : date.getTimezoneOffset(),,
+      N = daysInYear(date),
+      n = daysInMonth(date),	
 			flags = {
 				d:    d,
 				dd:   pad(d),
@@ -115,11 +115,11 @@ dateObj.i18n = {
 	]
 };
 
-isLeapYear = function(year=dateFormat("yyyy")) {
+isLeapYear = function(year=dateObj("yyyy")) {
   return ((year % 4 == 0) && (year % 100 != 0)) || (year % 400 == 0);
 }
 
-daysInYear = function(year=dateFormat("yyyy")) {
+daysInYear = function(year=dateObj("yyyy")) {
   x = 365;
   if (isLeapYear(year)) {
     x += 1;
@@ -127,24 +127,24 @@ daysInYear = function(year=dateFormat("yyyy")) {
   return x;
 }
 
-daysInMonth = function(date=dateFormat()) {
-  var year = dateFormat(date, "yyyy")
-  var month = dateFormat(date, "m");
+daysInMonth = function(date=dateObj()) {
+  var year = dateObj(date, "yyyy")
+  var month = dateObj(date, "m");
   var numDays = [31,28,31,30,31,30,31,31,30,31,30,31];
-  if (isLeapYear(dateFormat(date, "yyyy")) && month === "2") {
+  if (isLeapYear(dateObj(date, "yyyy")) && month === "2") {
     return 29;
   }
   return numDays[month-1];
 }
 
-dayOfYear = function(date=dateFormat()) {
-  let x = dateFormat(date, "d")*1;
-  let year = dateFormat(date, "yyyy")
-  let month = dateFormat(date, "m")*1;
+dayOfYear = function(date=dateObj()) {
+  let x = dateObj(date, "d")*1;
+  let year = dateObj(date, "yyyy")
+  let month = dateObj(date, "m")*1;
 
   // console.log(typeof(year));
   for (let i = 1; i < month; ++i) { 
-    x += daysInMonth(dateFormat( year +" " +  i.toString() ));
+    x += daysInMonth(dateObj( year +" " +  i.toString() ));
   }      
   return x;
 }
