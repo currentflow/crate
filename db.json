@@ -1,27 +1,5 @@
 [
   {
-    "index": 0,
-    "id": "9a8b38",
-    "name": {
-      "first": "Alyce",
-      "last": "Case"
-    },
-    "age": 55,
-    "eyes": "blue",
-    "isEvil": true,
-    "temperment": "energetic",
-    "animal": "Ibis",
-    "company": "VISALIA",
-    "email": "alyce@visalia.me",
-    "phone": "+1 (814) 537-2698",
-    "latitude": "-32.653403",
-    "longitude": "145.643829",
-    "city": "Wheaton",
-    "tagline": "Velit consequat fugiat nisi proident officia nisi anim aliquip.",
-    "about": "Reprehenderit occaecat et sit sint amet excepteur cillum nisi ipsum ex et reprehenderit et non. Voluptate proident est laboris et ex dolore ut non eu velit. Consectetur commodo ut labore non eu voluptate ullamco fugiat eu non amet occaecat. Aliquip voluptate tempor fugiat ut."
-  },
-  {
-    "index": 1,
     "id": "931c88",
     "name": {
       "first": "Emma",
@@ -31,7 +9,7 @@
     "eyes": "green",
     "isEvil": true,
     "temperment": "peculiar",
-    "animal": "Oozle",
+    "animal": "Water Oozle",
     "company": "AMRIL",
     "email": "emma@amril.co.uk",
     "phone": "+1 (926) 504-3880",
@@ -42,7 +20,6 @@
     "about": "Velit dolor excepteur occaecat cillum magna proident proident ea ut anim. Consequat elit laboris aliquip reprehenderit ut commodo id culpa mollit veniam anim nulla deserunt. Velit adipisicing pariatur aliquip minim. Deserunt eiusmod amet nostrud ea laborum occaecat commodo. In ut enim ad cillum in enim cupidatat ipsum eiusmod culpa non qui aliqua. Aliquip aliquip aliquip qui officia magna tempor do qui deserunt aute elit. Adipisicing do ad laboris commodo Lorem Lorem elit aliqua laborum nulla occaecat voluptate."
   },
   {
-    "index": 2,
     "id": "9d2c57",
     "name": {
       "first": "Fitzpatrick",
@@ -63,7 +40,6 @@
     "about": "Laboris cupidatat eu ea anim veniam. Consequat veniam ut nulla enim exercitation voluptate nulla enim cupidatat. Magna nulla aliquip commodo veniam do duis mollit pariatur reprehenderit incididunt incididunt. Mollit non nostrud excepteur ea magna. Minim ipsum sunt Lorem ipsum esse laboris aliqua."
   },
   {
-    "index": 3,
     "id": "3f2e03",
     "name": {
       "first": "Morrison",
@@ -84,28 +60,6 @@
     "about": "Exercitation cupidatat ad proident dolore laboris ad. Consequat minim et enim nostrud consectetur aliquip anim nostrud quis eu ipsum nisi enim. Non qui do officia nostrud proident ut. Cillum nostrud nostrud occaecat officia. Voluptate deserunt reprehenderit magna ipsum eiusmod. Anim ullamco non occaecat veniam laborum ad esse tempor dolore consectetur commodo in."
   },
   {
-    "index": 4,
-    "id": "7cb549",
-    "name": {
-      "first": "Leigh",
-      "last": "Butler"
-    },
-    "age": 54,
-    "eyes": "blue",
-    "isEvil": true,
-    "temperment": "excitable",
-    "animal": "Bear",
-    "company": "SYNTAC",
-    "email": "leigh@syntac.io",
-    "phone": "+1 (963) 505-3716",
-    "latitude": "86.20988",
-    "longitude": "12.201157",
-    "city": "Emory",
-    "tagline": "Est sit commodo ullamco non minim do voluptate duis exercitation.",
-    "about": "Cupidatat amet labore tempor minim veniam incididunt consequat officia ea voluptate aute. Tempor excepteur quis qui proident anim consectetur Lorem quis ex Lorem laboris. Aute deserunt enim consectetur magna laboris eiusmod eiusmod ullamco sint mollit proident. Nulla aliquip est tempor consequat ipsum tempor. Sunt ut anim minim eiusmod eu officia qui non."
-  },
-  {
-    "index": 5,
     "id": "43a32f",
     "name": {
       "first": "Moon",
@@ -126,70 +80,6 @@
     "about": "Et minim consectetur Lorem ea id amet sunt amet proident in et sunt tempor cupidatat. Minim excepteur sint adipisicing adipisicing nostrud do consectetur minim sint pariatur laborum ullamco. Sunt mollit ipsum veniam velit in non consectetur non aliqua est reprehenderit velit deserunt. Non consequat exercitation sit proident in deserunt veniam sint adipisicing proident nulla ipsum aliqua. Dolor ad dolor ullamco est anim aliqua non."
   },
   {
-    "index": 6,
-    "id": "30b790",
-    "name": {
-      "first": "Flossie",
-      "last": "Fry"
-    },
-    "age": 32,
-    "eyes": "faraway",
-    "isEvil": true,
-    "temperment": "pleasant",
-    "animal": "Baboon",
-    "company": "EXOSTREAM",
-    "email": "flossie@exostream.com",
-    "phone": "+1 (937) 502-2670",
-    "latitude": "36.673476",
-    "longitude": "73.309239",
-    "city": "Teasdale",
-    "tagline": "Exercitation qui dolore exercitation tempor qui mollit Lorem.",
-    "about": "Id pariatur non sit occaecat quis elit nostrud labore reprehenderit et et. Irure irure et do deserunt adipisicing incididunt Lorem irure incididunt est. Labore Lorem cillum dolor excepteur velit pariatur consectetur id."
-  },
-  {
-    "index": 7,
-    "id": "a58102",
-    "name": {
-      "first": "Beatriz",
-      "last": "Humphrey"
-    },
-    "age": 70,
-    "eyes": "deep",
-    "isEvil": false,
-    "temperment": "proud",
-    "animal": "Falcon",
-    "company": "DOGNOSIS",
-    "email": "beatriz@dognosis.org",
-    "phone": "+1 (835) 566-3734",
-    "latitude": "61.686319",
-    "longitude": "-67.471104",
-    "city": "Albany",
-    "tagline": "Duis ex ut mollit nostrud voluptate pariatur.",
-    "about": "Eu Lorem nisi ut sint mollit duis sint. Velit nulla aliqua id dolor. Sit aliqua reprehenderit enim deserunt non veniam eu occaecat ea sit aliqua nisi. Minim quis in pariatur aute laboris est labore."
-  },
-  {
-    "index": 8,
-    "id": "b1442c",
-    "name": {
-      "first": "Katheryn",
-      "last": "Dennis"
-    },
-    "age": 64,
-    "eyes": "green",
-    "isEvil": false,
-    "temperment": "cruel",
-    "animal": "Ibis",
-    "company": "INSURETY",
-    "email": "katheryn@insurety.biz",
-    "phone": "+1 (950) 600-2614",
-    "latitude": "-43.002378",
-    "longitude": "153.684482",
-    "city": "Elliston",
-    "tagline": "Aliquip ex velit voluptate dolor.",
-    "about": "Laborum minim commodo aliquip laboris officia mollit eiusmod velit fugiat ea anim non. Mollit minim est esse qui qui irure. Magna sit fugiat incididunt sint exercitation commodo non excepteur aliqua quis. Incididunt commodo fugiat excepteur reprehenderit sint nostrud quis amet adipisicing adipisicing veniam nisi ut."
-  },
-  {
-    "index": 9,
     "id": "8624a8",
     "name": {
       "first": "Elizabeth",
