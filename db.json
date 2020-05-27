@@ -1,149 +1,212 @@
-{
-  "starting lineup": [
-    {
-      "Pos": "C",
-      "Player": "Jody Davis",
-      "G": 150,
-      "AB": 523,
-      "H": 134,
-      "Avg.": ".256",
-      "HR": 19,
-      "RBI": 94
+[
+  {
+    "index": 0,
+    "id": "9a8b38",
+    "name": {
+      "first": "Alyce",
+      "last": "Case"
     },
-    {
-      "Pos": "1B",
-      "Player": "Leon Durham",
-      "G": 137,
-      "AB": 473,
-      "H": 132,
-      "Avg.": ".279",
-      "HR": 23,
-      "RBI": 96
+    "age": 55,
+    "eyes": "blue",
+    "isEvil": true,
+    "temperment": "energetic",
+    "animal": "Ibis",
+    "company": "VISALIA",
+    "email": "alyce@visalia.me",
+    "phone": "+1 (814) 537-2698",
+    "latitude": "-32.653403",
+    "longitude": "145.643829",
+    "city": "Wheaton",
+    "tagline": "Velit consequat fugiat nisi proident officia nisi anim aliquip.",
+    "about": "Reprehenderit occaecat et sit sint amet excepteur cillum nisi ipsum ex et reprehenderit et non. Voluptate proident est laboris et ex dolore ut non eu velit. Consectetur commodo ut labore non eu voluptate ullamco fugiat eu non amet occaecat. Aliquip voluptate tempor fugiat ut."
+  },
+  {
+    "index": 1,
+    "id": "931c88",
+    "name": {
+      "first": "Emma",
+      "last": "Chase"
     },
-    {
-      "Pos": "2B",
-      "Player": "Ryne Sandberg",
-      "G": 156,
-      "AB": 636,
-      "H": 200,
-      "Avg.": ".314",
-      "HR": 19,
-      "RBI": 84
+    "age": 32,
+    "eyes": "green",
+    "isEvil": true,
+    "temperment": "peculiar",
+    "animal": "Oozle",
+    "company": "AMRIL",
+    "email": "emma@amril.co.uk",
+    "phone": "+1 (926) 504-3880",
+    "latitude": "78.449734",
+    "longitude": "-155.607861",
+    "city": "Carlton",
+    "tagline": "Consectetur ipsum fugiat anim ut sint ullamco duis Lorem commodo in tempor nulla cillum.",
+    "about": "Velit dolor excepteur occaecat cillum magna proident proident ea ut anim. Consequat elit laboris aliquip reprehenderit ut commodo id culpa mollit veniam anim nulla deserunt. Velit adipisicing pariatur aliquip minim. Deserunt eiusmod amet nostrud ea laborum occaecat commodo. In ut enim ad cillum in enim cupidatat ipsum eiusmod culpa non qui aliqua. Aliquip aliquip aliquip qui officia magna tempor do qui deserunt aute elit. Adipisicing do ad laboris commodo Lorem Lorem elit aliqua laborum nulla occaecat voluptate."
+  },
+  {
+    "index": 2,
+    "id": "9d2c57",
+    "name": {
+      "first": "Fitzpatrick",
+      "last": "Burch"
     },
-    {
-      "Pos": "3B",
-      "Player": "Ron Cey",
-      "G": 146,
-      "AB": 505,
-      "H": 121,
-      "Avg.": ".240",
-      "HR": 25,
-      "RBI": 97
+    "age": 47,
+    "eyes": "dim",
+    "isEvil": true,
+    "temperment": "careless",
+    "animal": "Sloth",
+    "company": "ACLIMA",
+    "email": "fitzpatrick@aclima.name",
+    "phone": "+1 (822) 488-3702",
+    "latitude": "-68.805211",
+    "longitude": "-27.518216",
+    "city": "Mappsville",
+    "tagline": "Aliqua ullamco ea elit deserunt.",
+    "about": "Laboris cupidatat eu ea anim veniam. Consequat veniam ut nulla enim exercitation voluptate nulla enim cupidatat. Magna nulla aliquip commodo veniam do duis mollit pariatur reprehenderit incididunt incididunt. Mollit non nostrud excepteur ea magna. Minim ipsum sunt Lorem ipsum esse laboris aliqua."
+  },
+  {
+    "index": 3,
+    "id": "3f2e03",
+    "name": {
+      "first": "Morrison",
+      "last": "Cabrera"
     },
-    {
-      "Pos": "SS",
-      "Player": "Larry Bowa",
-      "G": 133,
-      "AB": 391,
-      "H": 87,
-      "Avg.": ".223",
-      "HR": 0,
-      "RBI": 17
+    "age": 38,
+    "eyes": "deep",
+    "isEvil": false,
+    "temperment": "proud",
+    "animal": "Lynx",
+    "company": "TELEQUIET",
+    "email": "morrison@telequiet.net",
+    "phone": "+1 (898) 509-3245",
+    "latitude": "29.044475",
+    "longitude": "-60.895062",
+    "city": "Allendale",
+    "tagline": "Voluptate reprehenderit non cillum labore anim consequat.",
+    "about": "Exercitation cupidatat ad proident dolore laboris ad. Consequat minim et enim nostrud consectetur aliquip anim nostrud quis eu ipsum nisi enim. Non qui do officia nostrud proident ut. Cillum nostrud nostrud occaecat officia. Voluptate deserunt reprehenderit magna ipsum eiusmod. Anim ullamco non occaecat veniam laborum ad esse tempor dolore consectetur commodo in."
+  },
+  {
+    "index": 4,
+    "id": "7cb549",
+    "name": {
+      "first": "Leigh",
+      "last": "Butler"
     },
-    {
-      "Pos": "LF",
-      "Player": "Gary Matthews",
-      "G": 147,
-      "AB": 491,
-      "H": 143,
-      "Avg.": ".291",
-      "HR": 14,
-      "RBI": 82
+    "age": 54,
+    "eyes": "blue",
+    "isEvil": true,
+    "temperment": "excitable",
+    "animal": "Bear",
+    "company": "SYNTAC",
+    "email": "leigh@syntac.io",
+    "phone": "+1 (963) 505-3716",
+    "latitude": "86.20988",
+    "longitude": "12.201157",
+    "city": "Emory",
+    "tagline": "Est sit commodo ullamco non minim do voluptate duis exercitation.",
+    "about": "Cupidatat amet labore tempor minim veniam incididunt consequat officia ea voluptate aute. Tempor excepteur quis qui proident anim consectetur Lorem quis ex Lorem laboris. Aute deserunt enim consectetur magna laboris eiusmod eiusmod ullamco sint mollit proident. Nulla aliquip est tempor consequat ipsum tempor. Sunt ut anim minim eiusmod eu officia qui non."
+  },
+  {
+    "index": 5,
+    "id": "43a32f",
+    "name": {
+      "first": "Moon",
+      "last": "Kinney"
     },
-    {
-      "Pos": "CF",
-      "Player": "Bob Dernier",
-      "G": 143,
-      "AB": 536,
-      "H": 149,
-      "Avg.": ".278",
-      "HR": 3,
-      "RBI": 32
+    "age": 68,
+    "eyes": "beady",
+    "isEvil": false,
+    "temperment": "gentle",
+    "animal": "Kingfisher",
+    "company": "MENBRAIN",
+    "email": "moon@menbrain.ca",
+    "phone": "+1 (984) 457-2218",
+    "latitude": "88.547773",
+    "longitude": "101.570408",
+    "city": "Elwood",
+    "tagline": "Duis cupidatat veniam cillum ut sunt aliqua labore minim veniam velit velit velit culpa.",
+    "about": "Et minim consectetur Lorem ea id amet sunt amet proident in et sunt tempor cupidatat. Minim excepteur sint adipisicing adipisicing nostrud do consectetur minim sint pariatur laborum ullamco. Sunt mollit ipsum veniam velit in non consectetur non aliqua est reprehenderit velit deserunt. Non consequat exercitation sit proident in deserunt veniam sint adipisicing proident nulla ipsum aliqua. Dolor ad dolor ullamco est anim aliqua non."
+  },
+  {
+    "index": 6,
+    "id": "30b790",
+    "name": {
+      "first": "Flossie",
+      "last": "Fry"
     },
-    {
-      "Pos": "RF",
-      "Player": "Keith Moreland",
-      "G": 140,
-      "AB": 495,
-      "H": 138,
-      "Avg.": ".279",
-      "HR": 16,
-      "RBI": 80
-    }
-  ],
-  "starting pitchers": [
-    {
-      "Player": "Steve Trout",
-      "G": 32,
-      "IP": 190,
-      "W": 13,
-      "L": 7,
-      "ERA": 3.41,
-      "SO": 81
+    "age": 32,
+    "eyes": "faraway",
+    "isEvil": true,
+    "temperment": "pleasant",
+    "animal": "Baboon",
+    "company": "EXOSTREAM",
+    "email": "flossie@exostream.com",
+    "phone": "+1 (937) 502-2670",
+    "latitude": "36.673476",
+    "longitude": "73.309239",
+    "city": "Teasdale",
+    "tagline": "Exercitation qui dolore exercitation tempor qui mollit Lorem.",
+    "about": "Id pariatur non sit occaecat quis elit nostrud labore reprehenderit et et. Irure irure et do deserunt adipisicing incididunt Lorem irure incididunt est. Labore Lorem cillum dolor excepteur velit pariatur consectetur id."
+  },
+  {
+    "index": 7,
+    "id": "a58102",
+    "name": {
+      "first": "Beatriz",
+      "last": "Humphrey"
     },
-    {
-      "Player": "Dennis Eckersley",
-      "G": 24,
-      "IP": 160.1,
-      "W": 10,
-      "L": 8,
-      "ERA": 3.03,
-      "SO": 81
+    "age": 70,
+    "eyes": "deep",
+    "isEvil": false,
+    "temperment": "proud",
+    "animal": "Falcon",
+    "company": "DOGNOSIS",
+    "email": "beatriz@dognosis.org",
+    "phone": "+1 (835) 566-3734",
+    "latitude": "61.686319",
+    "longitude": "-67.471104",
+    "city": "Albany",
+    "tagline": "Duis ex ut mollit nostrud voluptate pariatur.",
+    "about": "Eu Lorem nisi ut sint mollit duis sint. Velit nulla aliqua id dolor. Sit aliqua reprehenderit enim deserunt non veniam eu occaecat ea sit aliqua nisi. Minim quis in pariatur aute laboris est labore."
+  },
+  {
+    "index": 8,
+    "id": "b1442c",
+    "name": {
+      "first": "Katheryn",
+      "last": "Dennis"
     },
-    {
-      "Player": "Rick Sutcliffe",
-      "G": 20,
-      "IP": 150.1,
-      "W": 16,
-      "L": 1,
-      "ERA": 2.69,
-      "SO": 155
+    "age": 64,
+    "eyes": "green",
+    "isEvil": false,
+    "temperment": "cruel",
+    "animal": "Ibis",
+    "company": "INSURETY",
+    "email": "katheryn@insurety.biz",
+    "phone": "+1 (950) 600-2614",
+    "latitude": "-43.002378",
+    "longitude": "153.684482",
+    "city": "Elliston",
+    "tagline": "Aliquip ex velit voluptate dolor.",
+    "about": "Laborum minim commodo aliquip laboris officia mollit eiusmod velit fugiat ea anim non. Mollit minim est esse qui qui irure. Magna sit fugiat incididunt sint exercitation commodo non excepteur aliqua quis. Incididunt commodo fugiat excepteur reprehenderit sint nostrud quis amet adipisicing adipisicing veniam nisi ut."
+  },
+  {
+    "index": 9,
+    "id": "8624a8",
+    "name": {
+      "first": "Elizabeth",
+      "last": "Lindsay"
     },
-    {
-      "Player": "Scott Sanderson",
-      "G": 24,
-      "IP": 140.2,
-      "W": 8,
-      "L": 5,
-      "ERA": 3.14,
-      "SO": 76
-    },
-    {
-      "Player": "Dick Ruthven",
-      "G": 23,
-      "IP": 126.2,
-      "W": 6,
-      "L": 10,
-      "ERA": 5.04,
-      "SO": 55
-    },
-    {
-      "Player": "Chuck Rainey",
-      "G": 17,
-      "IP": 88.1,
-      "W": 5,
-      "L": 7,
-      "ERA": 4.28,
-      "SO": 45
-    },
-    {
-      "Player": "Don Schulze",
-      "G": 1,
-      "IP": 3,
-      "W": 0,
-      "L": 0,
-      "ERA": 12,
-      "SO": 2
-    }
-  ]
-}
+    "age": 31,
+    "eyes": "deep",
+    "isEvil": true,
+    "temperment": "emotional",
+    "animal": "Toucan",
+    "company": "PORTICO",
+    "email": "elizabeth@portico.us",
+    "phone": "+1 (809) 483-3787",
+    "latitude": "37.200995",
+    "longitude": "-148.296388",
+    "city": "Norwood",
+    "tagline": "Tempor velit commodo qui voluptate exercitation dolore consequat veniam cupidatat quis amet voluptate.",
+    "about": "Deserunt enim sunt dolore proident proident excepteur id quis ad. Mollit elit sit sint in. Dolor culpa est enim do do. Exercitation Lorem enim do deserunt fugiat incididunt. Pariatur proident ex ex irure in quis commodo sit duis irure ullamco sunt. Proident labore magna enim consectetur dolor in officia. Et ad consequat magna ut cillum culpa consectetur non non nulla."
+  }
+]
