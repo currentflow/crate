@@ -1,3 +1,4 @@
+
 [
   {
     "id": "931c88",
@@ -10,14 +11,10 @@
     "isEvil": true,
     "temperment": "peculiar",
     "animal": "Water Oozle",
-    "company": "AMRIL",
-    "email": "emma@amril.co.uk",
-    "phone": "+1 (926) 504-3880",
     "latitude": "78.449734",
     "longitude": "-155.607861",
     "city": "Carlton",
-    "tagline": "Consectetur ipsum fugiat anim ut sint ullamco duis Lorem commodo in tempor nulla cillum.",
-    "about": "Velit dolor excepteur occaecat cillum magna proident proident ea ut anim. Consequat elit laboris aliquip reprehenderit ut commodo id culpa mollit veniam anim nulla deserunt. Velit adipisicing pariatur aliquip minim. Deserunt eiusmod amet nostrud ea laborum occaecat commodo. In ut enim ad cillum in enim cupidatat ipsum eiusmod culpa non qui aliqua. Aliquip aliquip aliquip qui officia magna tempor do qui deserunt aute elit. Adipisicing do ad laboris commodo Lorem Lorem elit aliqua laborum nulla occaecat voluptate."
+    "about": "Adipisicing do ad laboris commodo Lorem Lorem elit aliqua laborum nulla occaecat voluptate."
   },
   {
     "id": "9d2c57",
@@ -30,14 +27,10 @@
     "isEvil": true,
     "temperment": "careless",
     "animal": "Sloth",
-    "company": "ACLIMA",
-    "email": "fitzpatrick@aclima.name",
-    "phone": "+1 (822) 488-3702",
     "latitude": "-68.805211",
     "longitude": "-27.518216",
     "city": "Mappsville",
-    "tagline": "Aliqua ullamco ea elit deserunt.",
-    "about": "Laboris cupidatat eu ea anim veniam. Consequat veniam ut nulla enim exercitation voluptate nulla enim cupidatat. Magna nulla aliquip commodo veniam do duis mollit pariatur reprehenderit incididunt incididunt. Mollit non nostrud excepteur ea magna. Minim ipsum sunt Lorem ipsum esse laboris aliqua."
+    "about": "Aliqua ullamco ea elit deserunt."
   },
   {
     "id": "3f2e03",
@@ -50,14 +43,10 @@
     "isEvil": false,
     "temperment": "proud",
     "animal": "Lynx",
-    "company": "TELEQUIET",
-    "email": "morrison@telequiet.net",
-    "phone": "+1 (898) 509-3245",
     "latitude": "29.044475",
     "longitude": "-60.895062",
     "city": "Allendale",
-    "tagline": "Voluptate reprehenderit non cillum labore anim consequat.",
-    "about": "Exercitation cupidatat ad proident dolore laboris ad. Consequat minim et enim nostrud consectetur aliquip anim nostrud quis eu ipsum nisi enim. Non qui do officia nostrud proident ut. Cillum nostrud nostrud occaecat officia. Voluptate deserunt reprehenderit magna ipsum eiusmod. Anim ullamco non occaecat veniam laborum ad esse tempor dolore consectetur commodo in."
+    "about": "Voluptate reprehenderit non cillum labore anim consequat."
   },
   {
     "id": "43a32f",
@@ -69,15 +58,11 @@
     "eyes": "beady",
     "isEvil": false,
     "temperment": "gentle",
-    "animal": "Kingfisher",
-    "company": "MENBRAIN",
-    "email": "moon@menbrain.ca",
-    "phone": "+1 (984) 457-2218",
+    "animal": "Kingfisher",,
     "latitude": "88.547773",
     "longitude": "101.570408",
     "city": "Elwood",
-    "tagline": "Duis cupidatat veniam cillum ut sunt aliqua labore minim veniam velit velit velit culpa.",
-    "about": "Et minim consectetur Lorem ea id amet sunt amet proident in et sunt tempor cupidatat. Minim excepteur sint adipisicing adipisicing nostrud do consectetur minim sint pariatur laborum ullamco. Sunt mollit ipsum veniam velit in non consectetur non aliqua est reprehenderit velit deserunt. Non consequat exercitation sit proident in deserunt veniam sint adipisicing proident nulla ipsum aliqua. Dolor ad dolor ullamco est anim aliqua non."
+    "about": "Et minim consectetur sint pariatur laborum ullamco. 
   },
   {
     "id": "8624a8",
@@ -90,13 +75,9 @@
     "isEvil": true,
     "temperment": "emotional",
     "animal": "Toucan",
-    "company": "PORTICO",
-    "email": "elizabeth@portico.us",
-    "phone": "+1 (809) 483-3787",
     "latitude": "37.200995",
     "longitude": "-148.296388",
     "city": "Norwood",
-    "tagline": "Tempor velit commodo qui voluptate exercitation dolore consequat veniam cupidatat quis amet voluptate.",
-    "about": "Deserunt enim sunt dolore proident proident excepteur id quis ad. Mollit elit sit sint in. Dolor culpa est enim do do. Exercitation Lorem enim do deserunt fugiat incididunt. Pariatur proident ex ex irure in quis commodo sit duis irure ullamco sunt. Proident labore magna enim consectetur dolor in officia. Et ad consequat magna ut cillum culpa consectetur non non nulla."
+    "about": "Tempor velit commodo qui voluptate exercitation quis amet voluptate."
   }
 ]
