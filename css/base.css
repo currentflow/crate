@@ -416,8 +416,17 @@ blockquote>:last-child {
 }
 
 [v-cloak] {
-	display: none
+  position: relative;
 }
+
+[v-cloak] > * { display:none }
+[v-cloak] > *::before { 
+    content: "loading…";
+    position: absolute;
+    top: 4rem;
+    left: 4rem;
+    opacity: 0.3;
+  }
 
 .btn,
 .router-link-active,
