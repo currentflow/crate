@@ -3,7 +3,7 @@
 ``` js
 [
   {
-    'repeat(5, 10)': {
+    'repeat(20)': {
       id: '{{objectId().slice(-6)}}',
       name: {
         first: '{{firstName()}}',
@@ -33,7 +33,7 @@
                         'violet', 'brown'];
         return colors[tags.integer(0, colors.length - 1)];
       },
-      lorem: '{{lorem(1, sentences)}}'
+      lorem: "{{lorem(1, 'sentences')}}"
     }
   }
 ]
