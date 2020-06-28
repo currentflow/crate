@@ -1,0 +1,262 @@
+[
+  {
+    "id": 725217,
+    "name": {
+      "first": "Serrano",
+      "last": "Reynolds"
+    },
+    "animal": "Leopard",
+    "bird": "Grebe",
+    "isTrue": true,
+    "number": "0.4199",
+    "color": "brown",
+    "lorem": "Nisi sint pariatur adipisicing duis excepteur laboris ipsum tempor Lorem irure proident."
+  },
+  {
+    "id": "44cfde",
+    "name": {
+      "first": "Roseann",
+      "last": "Wilder"
+    },
+    "animal": "Sloth",
+    "bird": "Owl",
+    "isTrue": true,
+    "number": "0.4219",
+    "color": "yellow",
+    "lorem": "Elit in elit elit amet reprehenderit."
+  },
+  {
+    "id": "9d7236",
+    "name": {
+      "first": "Noelle",
+      "last": "Dodson"
+    },
+    "animal": "Turtle",
+    "bird": "Toucan",
+    "isTrue": false,
+    "number": "0.6374",
+    "color": "green",
+    "lorem": "Incididunt in laborum dolor duis adipisicing dolore ipsum aliquip occaecat."
+  },
+  {
+    "id": "46ff91",
+    "name": {
+      "first": "Dotson",
+      "last": "Vincent"
+    },
+    "animal": "Bear",
+    "bird": "Duck",
+    "isTrue": false,
+    "number": "0.3016",
+    "color": "brown",
+    "lorem": "Aliquip qui ipsum do ea ullamco dolore irure pariatur qui."
+  },
+  {
+    "id": "e7fad6",
+    "name": {
+      "first": "Benson",
+      "last": "Whitehead"
+    },
+    "animal": "Marmot",
+    "bird": "Duck",
+    "isTrue": true,
+    "number": "0.1352",
+    "color": "red",
+    "lorem": "Dolor in et ut nisi qui id."
+  },
+  {
+    "id": "6b312b",
+    "name": {
+      "first": "Janell",
+      "last": "Moore"
+    },
+    "animal": "Dolphin",
+    "bird": "Kingfisher",
+    "isTrue": false,
+    "number": "0.5611",
+    "color": "blue",
+    "lorem": "Qui magna do ea nisi ea enim."
+  },
+  {
+    "id": "9d5950",
+    "name": {
+      "first": "Ingram",
+      "last": "Cannon"
+    },
+    "animal": "Gecko",
+    "bird": "Grebe",
+    "isTrue": false,
+    "number": "0.4032",
+    "color": "red",
+    "lorem": "Irure est et fugiat irure Lorem culpa ad do veniam id eiusmod."
+  },
+  {
+    "id": 468321,
+    "name": {
+      "first": "Sylvia",
+      "last": "West"
+    },
+    "animal": "Jaguar",
+    "bird": "Buzzard",
+    "isTrue": false,
+    "number": "0.5762",
+    "color": "blue",
+    "lorem": "Nulla amet esse non amet esse et."
+  },
+  {
+    "id": 881319,
+    "name": {
+      "first": "Sanchez",
+      "last": "Gutierrez"
+    },
+    "animal": "Dolphin",
+    "bird": "Grebe",
+    "isTrue": false,
+    "number": "0.758",
+    "color": "brown",
+    "lorem": "Sit esse nisi dolor nulla est officia."
+  },
+  {
+    "id": "0d8cdd",
+    "name": {
+      "first": "Jordan",
+      "last": "Ford"
+    },
+    "animal": "Bear",
+    "bird": "Hawk",
+    "isTrue": false,
+    "number": "0.6078",
+    "color": "violet",
+    "lorem": "Ad consequat ullamco elit dolor cupidatat do ea sint id proident voluptate do anim."
+  },
+  {
+    "id": "e9d32b",
+    "name": {
+      "first": "Riddle",
+      "last": "Holden"
+    },
+    "animal": "Sloth",
+    "bird": "Cuckoo",
+    "isTrue": false,
+    "number": "0.9179",
+    "color": "cyan",
+    "lorem": "Occaecat excepteur minim ipsum aliqua non."
+  },
+  {
+    "id": "a55196",
+    "name": {
+      "first": "Janie",
+      "last": "Levine"
+    },
+    "animal": "Dolphin",
+    "bird": "Egret",
+    "isTrue": true,
+    "number": "0.7589",
+    "color": "red",
+    "lorem": "Nulla non magna voluptate quis irure deserunt occaecat tempor consectetur fugiat exercitation esse irure excepteur."
+  },
+  {
+    "id": "ad67f0",
+    "name": {
+      "first": "Lupe",
+      "last": "Vang"
+    },
+    "animal": "Eagle",
+    "bird": "Grebe",
+    "isTrue": true,
+    "number": "0.9325",
+    "color": "red",
+    "lorem": "Labore non excepteur commodo nostrud aliqua do minim fugiat amet."
+  },
+  {
+    "id": "16a3a9",
+    "name": {
+      "first": "Barlow",
+      "last": "Lucas"
+    },
+    "animal": "Dolphin",
+    "bird": "Wren",
+    "isTrue": true,
+    "number": "0.888",
+    "color": "violet",
+    "lorem": "Incididunt nostrud Lorem non culpa nisi cupidatat amet."
+  },
+  {
+    "id": "e9516c",
+    "name": {
+      "first": "Angelina",
+      "last": "Wyatt"
+    },
+    "animal": "Badger",
+    "bird": "Eagle",
+    "isTrue": true,
+    "number": "0.5325",
+    "color": "brown",
+    "lorem": "Id proident laborum reprehenderit sit voluptate culpa ipsum aliqua irure adipisicing ea eiusmod adipisicing."
+  },
+  {
+    "id": "6d51ba",
+    "name": {
+      "first": "Marina",
+      "last": "Mcintosh"
+    },
+    "animal": "Frog",
+    "bird": "Osprey",
+    "isTrue": true,
+    "number": "0.0201",
+    "color": "cyan",
+    "lorem": "Aliquip voluptate dolor et esse."
+  },
+  {
+    "id": "e31844",
+    "name": {
+      "first": "Love",
+      "last": "Barr"
+    },
+    "animal": "Gecko",
+    "bird": "Duck",
+    "isTrue": true,
+    "number": "0.5229",
+    "color": "blue",
+    "lorem": "Cillum fugiat aliquip veniam qui nisi laboris ullamco magna aute culpa velit tempor."
+  },
+  {
+    "id": "22547f",
+    "name": {
+      "first": "Harrell",
+      "last": "Dunlap"
+    },
+    "animal": "Badger",
+    "bird": "Hawk",
+    "isTrue": false,
+    "number": "0.9643",
+    "color": "blue",
+    "lorem": "Nostrud reprehenderit officia mollit dolore est proident nisi."
+  },
+  {
+    "id": "9f8b64",
+    "name": {
+      "first": "Melendez",
+      "last": "Monroe"
+    },
+    "animal": "Marmot",
+    "bird": "Cuckoo",
+    "isTrue": true,
+    "number": "0.6358",
+    "color": "orange",
+    "lorem": "Magna nulla sint nisi et in cillum eiusmod culpa irure ut voluptate eiusmod tempor."
+  },
+  {
+    "id": "6283e2",
+    "name": {
+      "first": "Lorie",
+      "last": "Walker"
+    },
+    "animal": "Leopard",
+    "bird": "Buzzard",
+    "isTrue": true,
+    "number": "0.3668",
+    "color": "violet",
+    "lorem": "Ex cillum esse ipsum dolor nostrud elit culpa est."
+  }
+]
