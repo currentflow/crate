@@ -11,21 +11,21 @@
       },
       animal(tags) {
         
-        const animals = ['Leopard', 'Elephant', 'Dolphin', 'Marmot',
-                        'Frog', 'Eagle', 'Sloth', 'Turtle',
-                        'Gecko', 'Seal', 'Otter', 'Fox',
-                        'Salamander', 'Jaguar', 'Badger', 'Antelope',
-                        'Cougar', 'Coyote', 'Bear'];
+        const animals = ['leopard', 'elephant', 'dolphin', 'marmot',
+                        'frog', 'eagle', 'sloth', 'turtle',
+                        'gecko', 'seal', 'otter', 'fox',
+                        'salamander', 'Jaguar', 'badger', 'antelope',
+                        'cougar', 'coyote', 'bear'];
         return animals[tags.integer(0, animals.length - 1)];
       },
       bird(tags) {
-        const birds = ['Grebe', 'Eagle', 'Cuckoo','Owl', 
-                       'Toucan', 'Kingfisher', 'Duck', 'Egret',
-                       'Osprey', 'Hawk', 'Buzzard', 'Wren',
-                       'Swallow'];
+        const birds = ['grebe', 'eagle', 'cuckoo','owl', 
+                       'toucan', 'kingfisher', 'duck', 'egret',
+                       'osprey', 'Hawk', 'buzzard', 'Wren',
+                       'swallow'];
         return birds[tags.integer(0, birds.length - 1)];
       },
-      isTrue: '{{bool()}}',
+      istrue: '{{bool()}}',
       number: '{{floating(0, 1, 4)}}',
       color(tags) {
         const colors = ['red', 'orange', 'yellow', 
