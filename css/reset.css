@@ -1,7 +1,9 @@
 /* #region reset */
 :root {
   --font-size: 16px;
-  --text-color: #2C3E50;
+  --text-color: hsl(210,30%,24%);
+  --link-color: hsl(210,100%,40%);
+  --active-color: hsl(150,50%,50%);
   --background-color: #fff;
   --sans-serif: sans-serif;
   --serif: serif;
@@ -29,26 +31,43 @@ body {
   border: 1px none #ccc;
   border-bottom-style: solid;
 }
-:where(h1, h2, h3, h4, h5, h6) { margin: 0; }
-:where(h5, h6) { line-height: 1.5rem; }
-:where(p) { margin: 0.5em 0; }
+:where(h1) { margin: 0 0 1rem; line-height: 1.2rem; }
+:where(h2, h3, h4) { margin: 0; line-height: 1.2rem; }
+:where(h5, h6) { margin: 0; line-height: 1.5rem; }
+h1, .h1 { font-size: calc(1rem + 8px); }
+h2, .h2 { font-size: calc(1rem + 4px); }
+h3, .h3 { font-size: calc(1rem + 2px); }
+h4, .h4 { font-size: 1rem; }
+h5, .h5 { font-size: calc(1rem - 1px); }
+h6, .h6 { font-size: calc(1rem - 2px); }
+:where(p) { margin: 1em 0; }
 :where(ul, ol) {
   margin-top: 0;
   list-style-position: inside;
 }
 :where(ul:not(ul ul), ol:not(ol ol)) { padding: 0; }
 :where(ul ul, ol ol) { padding-left: 2ch; }
+:where(ul li, ol li) { font-size: 1rem;}
+:where(li li li) { font-size: calc(1em - 1px); }
 :where(pre) { white-space: pre-wrap; }
 .unset { 
-  all: unset; 
+  all: unset;
   box-sizing: border-box;
 }
 button.unset:hover:not(:active) { opacity: 0.6 }
 a { color: LinkText; }
-svg { vertical-align: top; }
+/* svg { vertical-align: top; } */
 /* #endregion reset */
 
+
+
 /* #region forms */
+/*
+  'a.button':         makes a link a button
+  'button.unset':     makes a button like text
+  '.btn':             adds pointer & hover effects
+  'button.unset.btn': makes a nice a11y unstyled button
+*/
 :root {
   --btn-border-width: 1px; 
   --btn-border-color: #ccc;
@@ -74,14 +93,14 @@ button, select, textarea), .button {
   color: inherit;
   border: var(--btn-border);
   border-radius: var(--btn-radius);
-  vertical-align: top;
+  /* vertical-align: top; */
   appearance: auto;
   max-width: 100%;
 }
 :where(textarea) {
   height: unset;
   line-height: 1.5;
-  vertical-align: top;
+  /* vertical-align: top; */
 }
 
 /* #region button */
@@ -97,7 +116,7 @@ button, select, textarea), .button {
   [type="submit"]:hover:not(:active, :disabled),
   [type="reset"]:hover:not(:active, :disabled),
   [type="color"]:hover:not(:active, :disabled)),
-  .button:hover:not(:active, :disabled)
+  .button:hover:not(:active, :disabled),
   .btn:hover:not(:active, :disabled) {
   opacity: 0.6;
 }
@@ -144,9 +163,11 @@ button, select, textarea), .button {
 :where([type="checkbox"], [type="radio"]) {
   --check-color: #333;
   --check-disabled: #ccc;
-  font-size: 1em;
   box-sizing: border-box;
+  position: relative;
   width: 1em; height: 1em;
+  top: 0.125em;
+  font-size: 1em;
   padding: 0; margin: 0;
   background-repeat: no-repeat;
   background-position: center;
@@ -156,8 +177,7 @@ button, select, textarea), .button {
   border-style: solid;
   appearance: none;
   cursor: pointer;
-  vertical-align: baseline;
-  margin-bottom: -0.125em;
+  /* vertical-align: -0.125em; */
 }
 :where([type="checkbox"]) { border-radius: .15em;}
 :where([type="radio"]) { border-radius: 50%; }
