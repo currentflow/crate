@@ -10,10 +10,11 @@
   --monospace: monospace monospace;
   -webkit-tap-highlight-color: transparent;
 }
-*, *::before, *::after { box-sizing: border-box; }
+*, *::before, *::after { box-sizing: inherit; }
 html {
   font-size: var(--font-size);
   text-size-adjust: 100%;
+  box-sizing: border-box;
 }
 body {
   height: 100dvh;
