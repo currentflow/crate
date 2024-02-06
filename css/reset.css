@@ -47,6 +47,8 @@ h3, .h3 { font-size: calc(1rem + 2px); }
 h4, .h4 { font-size: 1rem; }
 h5, .h5 { font-size: calc(1rem - 1px); }
 h6, .h6 { font-size: calc(1rem - 2px); }
+.h7 { font-size: calc(1rem - 3px); }
+.h8 { font-size: calc(1rem - 4px); }
 :where(p) { margin: 0 0 1em 0; }
 :where(ul, ol) {
   margin-top: 0;
@@ -58,8 +60,8 @@ h6, .h6 { font-size: calc(1rem - 2px); }
 :where(li li li) { font-size: calc(1em - 1px); }
 :where(ol ol) { list-style-type:lower-alpha; }
 :where(ol ol ol) { list-style-type:lower-roman; }
-:where(ul ul ul ul) { list-style-type:"▹"; }
-:where(ol ol ol ol) { list-style-type:lower-greek; }
+:where(ul ul ul ul) { list-style-type: disc; }
+:where(ol ol ol ol) { list-style-type: decimal }
 :where(pre) { 
   margin: 0 0 1em 0;
   white-space: pre-wrap; 
@@ -71,6 +73,8 @@ h6, .h6 { font-size: calc(1rem - 2px); }
 button.unset:hover:not(:active) { opacity: 0.6 }
 a { color: var(--link-color); }
 /* #endregion reset */
+
+/* ------------------------------------------ */
 
 /* #region forms */
 :root {
