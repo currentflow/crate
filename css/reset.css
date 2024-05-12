@@ -29,7 +29,7 @@
   -webkit-tap-highlight-color: transparent;
   tab-size: 2;
 } 
-:where(body) {
+body {
   font-family: var(--sans-serif);
   font-size: 1em;
   color: var(--text-color);
