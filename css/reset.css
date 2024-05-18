@@ -157,6 +157,7 @@ select {
   background: unset;
   height: unset;
   line-height: var(--line-height);
+  text-align: unset;
 } 
 /* #endregion button */ 
 /* #region textbox */ 
