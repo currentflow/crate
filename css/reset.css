@@ -14,7 +14,7 @@
   --sans-serif: system-ui, sans-serif;
   --serif: ui-serif, serif;
   --monospace: ui-monospace, monospace, monospace;
-  --duration: 500ms;
+  --duration: 150ms;
 }
 html[data-theme="dark"] {
   --fg: #fff;
