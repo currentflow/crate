@@ -1,29 +1,31 @@
-/* #region reset 7/8/24 */
-:where(:root) {
+/* #region reset 8/1/24 */
+:root {
+  color-scheme: light dark;
   --font-size: 16px;
   --line-height: 1.5;
-  --text-color: hsl(210,30%,24%);
+  --fg: hsl(210,30%,24%);
+  --bg: #fff;
   --link-color: hsl(210,100%,40%);
   --active-color: hsl(150,50%,50%);
-  --background-color: #fff;
   --border: 1px solid #ccc;
-  --border-radius: 0.3em;
+  --border-radius: 0.25em;
   --block-margin: 0 0 1em 0;
   --small-block-margin: 0 0 0.5em 0;
-  --sans-serif: system-ui, -apple-system,
-    "Open Sans", "Segoe UI", "Roboto", "Ubuntu",
-    "Cantarell", "Noto Sans", sans-serif;
-  --serif: serif;
-  --monospace: ui-monospace, "Menlo",
-    "Consolas", "Roboto Mono", "Ubuntu Monospace",
-    "Noto Mono", "Oxygen Mono", "Liberation Mono",
-    monospace, monospace;
+  --sans-serif: system-ui, sans-serif;
+  --serif: ui-serif, serif;
+  --monospace: ui-monospace, monospace, monospace;
+  --duration: 500ms;
 }
+html[data-theme="dark"] {
+  --fg: #fff;
+  --bg: hsl(210,30%,24%);
+}
+
 :where(*, *::before, *::after) { box-sizing: inherit; }
 :where(html) {
   font-size: var(--font-size);
   line-height: var(--line-height);
-  background-color: var(--background-color);
+  background-color: var(--bg);
   box-sizing: border-box;
   overflow-wrap: break-word;
   text-size-adjust: 100%;
@@ -32,20 +34,25 @@
   -webkit-tap-highlight-color: transparent;
   tab-size: 2;
   -moz-tab-size: 2;
+  transition: background-color var(--duration);
 }
 :where(body) {
   font-family: var(--sans-serif);
   font-size: 1em;
-  color: var(--text-color);
+  color: var(--fg);
   height: 100dvh;
   margin: 0;
   overflow-y: scroll;
+  transition: color var(--duration);
 }
 :where(hr) {
   height: 0;
   margin: 1.5rem auto;
   border: 1px none #ccc;
   border-bottom-style: solid;
+}
+:where(h1, h2, h3) {
+  text-wrap: balance;
 }
 :where(h1, .h1) {
   font-size: calc(1rem + 8px);
@@ -91,7 +98,7 @@
 :where(ol ol ol ol) { list-style-type: decimal }
 :where(ul ul ul) { list-style-type: "- "; }
 :where(nav) :where(ol, ul) { list-style-type: none; }
-pre {
+:where(pre) {
   margin: var(--block-margin);
   white-space: pre-wrap;
   overflow: auto;
@@ -101,17 +108,18 @@ pre {
   font-family: var(--monospace);
 }
 :where(b, strong) { font-weight: bolder; }
-a {
+:where(a) {
   color: var(--link-color);
   &:active { text-decoration: none; }
 }
-header a, nav a, a.unset {
+:where(header a, nav a, a.unset) {
   color: inherit;
   &:not(:hover),
   &:active { text-decoration: none; }
 }
 /* #endregion reset */
-/* #region forms 7/8/24 */
+
+/* #region forms 8/1/24 */
 :root {
   --x: 1.5; /* button height multiplier */
   --number-width: 6em;
@@ -122,9 +130,10 @@ header a, nav a, a.unset {
   --button-border: 0.0625em solid var(--border-color);
   --outline: 1px solid var(--outline-color);
   --button-radius: 0.25em;
-  --button-shadow: 
-    inset -0.0625em -0.0625em 0.125em 0.0625em hsla(0, 0%, 50%, 0.08);
+  --button-shadow: none;
+  --textbox-shadow: none;
   --text-shadow: inherit;
+  --vertical-align: top;
 }
 input:not([type="checkbox"], [type="radio"]),
 select, textarea, button, a.button, [type="number"] {
@@ -132,17 +141,17 @@ select, textarea, button, a.button, [type="number"] {
   font: inherit;
   color: inherit;
   font-size: calc(1em - 2px);
-  line-height: 100%;
   text-transform: none;
   text-shadow: var(--text-shadow);
-  height: calc((1em + 2px) * var(--x));
+  height: calc(1rem * var(--x));
+  line-height: calc(1 * var(--x));
   max-width: 100%;
   padding: 0 0.5rem 0;
   margin: 0;
   border: var(--button-border);
   border-radius: var(--button-radius);
   outline: none;
-  vertical-align: baseline;
+  vertical-align: var(--vertical-align);
   &:disabled { 
     cursor: default;
     box-shadow: none;
@@ -150,6 +159,7 @@ select, textarea, button, a.button, [type="number"] {
     opacity: 0.6;
   }
 }
+
 /* #region button */
 button, select, a.button, [type="button"], 
 [type="submit"], [type="reset"], 
@@ -157,7 +167,8 @@ button, select, a.button, [type="button"],
   background-color: var(--button-color);
   box-shadow: var(--button-shadow);
   cursor: pointer;
-  &:hover:not(:active, :disabled) { opacity: 0.6; }
+  &:hover:not(:active,:disabled) { opacity: 0.6; }
+  display: inline-flex;
 }
 select {
   min-width: 8em;
@@ -165,7 +176,7 @@ select {
 }
 select, select > option {
   color: inherit;
-  background-color: var(--background-color);
+  background-color: var(--bg);
 }
 select[multiple] {
   padding: 0;
@@ -190,9 +201,9 @@ optgroup {
 }
 .btn { cursor: pointer; }
 button.unset {
-  font-size: 1em;
-  line-height: 0;
-  height: calc(1em * var(--x));
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  height: unset;
   padding: 0;
   border: none;
   border-radius: 0;
@@ -201,9 +212,10 @@ button.unset {
   box-shadow: unset;
 }
 [type="image"] {
-  vertical-align: top !important;
+  vertical-align:  var(--vertical-align) !important;
 }
 /* #endregion button */
+
 /* #region textbox */
 [type="text"],[type="number"],[type="search"],
 [type="email"],[type="password"],
@@ -211,6 +223,7 @@ button.unset {
 [type="datetime-local"],[type="date"],
 [type="week"],[type="month"],[type="time"] {  
   background-color: var(--textbox-color);
+  box-shadow: var(--textbox-shadow);
   &:focus {
     outline: var(--outline);
     border-color: var(--outline-color);
@@ -223,56 +236,63 @@ input[type="number"] {
   padding-right: 0;
 }
 textarea {
-  height: unset;
   line-height: 1.5;
-  vertical-align: baseline;
-  width: 50ch;
-  height: 10em;
+  height: 5em; 
+  background-color: var(--textbox-color);
+  vertical-align: var(--vertical-align);
 }
 /* #endregion textbox */
+
 /* #region checkbox */
 label:has([type="checkbox"], [type="radio"]) { 
-  display: inline-flex;
+  display: flex;
   width: max-content;
   align-items: center;
-  gap: 0 1ch;
+  gap: 0 0.375em;
   cursor: pointer;
-  line-height: 1.5;
 }
+
 [type="checkbox"], [type="radio"] {
-  appearance: unset;
+  --vertical-align: top;
+  --duration: 500ms;
   position: relative;
+  appearance: unset;
   font-size: 1em;
   height: 1.5em;
   width: 1.5em;
-  background-size: 1em;
-  background-position: center;
-  background-repeat: no-repeat;
-  vertical-align: top;
+  vertical-align: var(--vertical-align);
   margin: 0;
   user-select: none;
   cursor: pointer;
-  &:checked::before {
+  &::before, &::after {
     position: absolute;
     content: "";
     height: 1.5em;
     width: 1.5em;
-    background-size: 1em;
-    background-position: center;
-    background-repeat: no-repeat;
+    mask-size: 1em;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: currentColor;
+    transition: var(--duration);
   }
+  &::after { scale: 0; }
+  &:checked::after { scale: 1; }
 }
 [type="checkbox"] {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='hsl(210,30%,24%)' d='M3 0C1.355 0 0 1.355 0 3v10c0 1.645 1.355 3 3 3h10c1.645 0 3-1.355 3-3V3c0-1.645-1.355-3-3-3Zm0 2h10c.571 0 1 .429 1 1v10c0 .571-.429 1-1 1H3c-.571 0-1-.429-1-1V3c0-.571.429-1 1-1Z'/%3E%3C/svg%3E%0A");
-  &:checked::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='hsl(210,30%,8%)' d='m6.756 11.733 6.266-6.266-1.244-1.245-5.022 5.022-2.534-2.533-1.244 1.245Z'/%3E%3C/svg%3E%0A");
+  &::before {
+     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath  d='M3 0C1.355 0 0 1.355 0 3v10c0 1.645 1.355 3 3 3h10c1.645 0 3-1.355 3-3V3c0-1.645-1.355-3-3-3Zm0 2h10c.571 0 1 .429 1 1v10c0 .571-.429 1-1 1H3c-.571 0-1-.429-1-1V3c0-.571.429-1 1-1Z'/%3E%3C/svg%3E%0A");
+  } 
+  &::after {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m6.756 11.733 6.266-6.266-1.244-1.245-5.022 5.022-2.534-2.533-1.244 1.245Z'/%3E%3C/svg%3E%0A");
   }
 }
 [type="radio"] {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='hsl(210,30%,24%)' d='M8 0a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8zm0 2a6 6 0 0 1 6 6 6 6 0 0 1-6 6 6 6 0 0 1-6-6 6 6 0 0 1 6-6z'/%3E%3C/svg%3E ");
-  &:checked::before {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='hsl(210,30%,24%)' d='M12 8a4 4 0 0 1-4 4 4 4 0 0 1-4-4 4 4 0 0 1 4-4 4 4 0 0 1 4 4Z'/%3E%3C/svg%3E%0A");
+  &::before {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M8 0a8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8 8 8 0 0 0-8-8zm0 2a6 6 0 0 1 6 6 6 6 0 0 1-6 6 6 6 0 0 1-6-6 6 6 0 0 1 6-6z'/%3E%3C/svg%3E ");
+  }
+  &::after {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cy='8' cx='8' r='4'/%3E%3C/svg%3E%0A");
   }
 }
-/* #endregion checkbox-radio */ 
-/* #endregion forms */ 
+/* #endregion checkbox */
+/* #endregion forms */
