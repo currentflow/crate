@@ -36,12 +36,12 @@ html[data-theme="dark"] {
   -moz-tab-size: 2;
   transition: background-color var(--duration);
 }
-body { margin: 0; }
 :where(body) {
   font-family: var(--sans-serif);
   font-size: 1em;
   color: var(--fg);
   height: 100dvh;
+  margin: 0;
   overflow-y: scroll;
   transition: color var(--duration);
 }
