@@ -14,7 +14,7 @@
   --sans-serif: system-ui, sans-serif;
   --serif: ui-serif, serif;
   --monospace: ui-monospace, monospace, monospace;
-  --duration: 150ms;
+  --duration: 300ms;
 }
 html[data-theme="dark"] {
   --fg: #fff;
@@ -254,7 +254,7 @@ label:has([type="checkbox"], [type="radio"]) {
 
 [type="checkbox"], [type="radio"] {
   --vertical-align: top;
-  --duration: 500ms;
+  --duration: 150ms;
   position: relative;
   appearance: unset;
   font-size: 1em;
