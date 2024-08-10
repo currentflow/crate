@@ -36,7 +36,7 @@ html[data-theme="dark"] {
   -moz-tab-size: 2;
   transition: background-color var(--duration);
 }
-:where(body) {
+body {
   font-family: var(--sans-serif);
   font-size: 1em;
   color: var(--fg);
