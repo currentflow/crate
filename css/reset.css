@@ -16,7 +16,7 @@
   --monospace: ui-monospace, monospace, monospace;
   --duration: 300ms;
 }
-html[data-theme="dark"] {
+html[data-theme="dark"], body.dark {
   --fg: #fff;
   --bg: hsl(210,30%,24%);
 }
