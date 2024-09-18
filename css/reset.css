@@ -41,7 +41,7 @@
   tab-size: 2;
   -moz-tab-size: 2;
 }
-:where(body) {
+body {
   position: relative;
   font-family: var(--sans-serif);
   font-size: 1em;
