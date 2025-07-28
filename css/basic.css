@@ -1,327 +1,322 @@
-/* #region base - July 2025 */
-@layer reset, forms;
+/* basic.css - July 2025 */
+
+/* #region Reset - July 2025  */
+*, *::before, *::after { box-sizing: border-box; }
+html { 
+  overflow-wrap: break-word;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  -webkit-tap-highlight-color: transparent;
+  tab-size: 2;
+}
+body, h1, h2, h3, h4, h5, h6, 
+p, pre, blockquote, fieldset, figure, 
+ol, ul, dl, dd, menu { margin: 0; }
+ul, ol, menu { padding-left: 2ch; }
+input, button, textarea, select { font-family: inherit; }
+img, picture, figure {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+/* #endregion reset */
 
 
-@layer reset {
-  /* #region Reset - July 2025  */
-  *, *::before, *::after { box-sizing: border-box; }
-  html { 
-    overflow-wrap: break-word;
-    -webkit-text-size-adjust: none;
-    text-size-adjust: none;
-    -webkit-tap-highlight-color: transparent;
-    tab-size: 2;
-  }
-  body, h1, h2, h3, h4, h5, h6, 
-  p, pre, blockquote, fieldset, figure, 
-  ol, ul, dl, dd, menu { margin: 0; }
-  ul, ol, menu { padding-left: 2ch; }
-  input, button, textarea, select { font-family: inherit; }
-  img, picture, figure {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-  /* #endregion reset */
+/* #region Defaults ******************************/
+/* #region Document */
+html[data-theme="light"] { color-scheme: light; }
+html[data-theme="dark"]  { color-scheme: dark;  }
+
+html {
+  font-family: var(--sans-serif, system-ui, sans-serif);
+  font-size: var(--font-size, 16px);
+  line-height: var(--line-height, 1.5);
+  background-color: var(--bg, canvas);
+  color: var(--fg, canvastext);
+  height: 100dvh;
+}
+body {
+  font-size: 1em;
+  color: var(--fg, inherit);
+  height: var(--doc-height, 100%);
+  min-height: 100dvh;
+}
+hr {
+  height: 0;
+  margin: 1.5rem auto;
+  border: 1px none var(--border-color, #ccc);
+  border-bottom-style: solid; }
+/* #endregion Document */
 
 
-  /* #region Defaults ******************************/
-  /* #region Document */
-  html[data-theme="light"] { color-scheme: light; }
-  html[data-theme="dark"]  { color-scheme: dark;  }
-
-  html {
-    font-family: var(--sans-serif, system-ui, sans-serif);
-    font-size: var(--font-size, 16px);
-    line-height: var(--line-height, 1.5);
-    background-color: var(--bg, canvas);
-    color: var(--fg, canvastext);
-    height: 100dvh;
-  }
-  body {
-    font-size: 1em;
-    color: var(--fg, inherit);
-    height: var(--doc-height, 100%);
-    min-height: 100dvh;
-  }
-  hr {
-    height: 0;
-    margin: 1.5rem auto;
-    border: 1px none var(--border-color, #ccc);
-    border-bottom-style: solid; }
-  /* #endregion Document */
+/* #region Headings */
+.hero,h1,h2,h3,h4,h5,h6 {
+  font-family: inherit;
+  color: var(--fg-stong, inherit);
+  margin: 0 0 0.25rem; 
+}
+.hero,h1,h2,h3,h4 { text-wrap: balance; }
+.hero { font-size: var(--hero, 2em); line-height: 3 }
+h1, .h1 { font-size: var(--h1, 1.5em); line-height: 1.3125; }
+h2, .h2 { font-size: var(--h2, 1.25em); line-height: 1.3125; }
+h3, .h3 { font-size: var(--h3, 1.125em); line-height: 1.3125; }
+h4, .h4 { font-size: var(--h4, 1em); line-height: 1.5; }
+h5, .h5 { font-size: var(--h5, 0.875em); line-height: 1.5; }
+h6, .h6 { font-size: var(--h6, 0.75em); line-height: 1.5; }
+h1, h2, h3, h4 { font-weight: var(--weight-700, 700); }
+h5, h6 { font-weight: var(--weight-600, 600); }
+/* #endregion Headings */
 
 
-  /* #region Headings */
-  .hero,h1,h2,h3,h4,h5,h6 {
-    font-family: inherit;
-    color: var(--fg-stong, inherit);
-    margin: 0 0 0.25rem; 
-  }
-  .hero,h1,h2,h3,h4 { text-wrap: balance; }
-  .hero { font-size: var(--hero, 2em); line-height: 3 }
-  h1, .h1 { font-size: var(--h1, 1.5em); line-height: 1.3125; }
-  h2, .h2 { font-size: var(--h2, 1.25em); line-height: 1.3125; }
-  h3, .h3 { font-size: var(--h3, 1.125em); line-height: 1.3125; }
-  h4, .h4 { font-size: var(--h4, 1em); line-height: 1.5; }
-  h5, .h5 { font-size: var(--h5, 0.875em); line-height: 1.5; }
-  h6, .h6 { font-size: var(--h6, 0.75em); line-height: 1.5; }
-  h1, h2, h3, h4 { font-weight: var(--weight-700, 700); }
-  h5, h6 { font-weight: var(--weight-600, 600); }
-  /* #endregion Headings */
+/* #region Lists */
+ol, ul, dl, menu {
+  margin: 0 0 1rem; 
+  list-style-position: outside; 
+}
+ol.unset, ul.unset, menu,
+  ol.unset ol, ul.unset ul  {
+  list-style-type: none;
+  padding: 0; 
+}
+dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0 1rem; 
+}
+dt { 
+  font-weight: 600; 
+  &::after { content: ":"; }
+}
+/* #endregion Lists */
 
 
-  /* #region Lists */
-  ol, ul, dl, menu {
-    margin: 0 0 1rem; 
-    list-style-position: outside; 
-  }
-  ol.unset, ul.unset, menu,
-    ol.unset ol, ul.unset ul  {
-    list-style-type: none;
-    padding: 0; 
-  }
-  dl {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    gap: 0 1rem; 
-  }
-  dt { 
-    font-weight: 600; 
-    &::after { content: ":"; }
-  }
-  /* #endregion Lists */
+/* #region Text Formatting */
+a, a:visited {
+  color: var(--link-color, #0000EE);
+  &:active { text-decoration: none; }
+}  
+header a, nav a, a.unset {
+  color: inherit;
+  &:not(:hover),
+  &:active { text-decoration: none; }
+}
+code, kbd, samp {
+  font-family: var(--monospace, monospace); 
+  font-size: var(--h5); 
+}
+abbr[title] {
+  text-decoration: underline;
+  text-decoration: underline dotted; 
+}
+b, strong { font-weight: bolder; }
+small {
+  font-size: var(--h5, 14px);
+  line-height: 1; 
+}
+sub, sup {
+  position: relative;
+  font-size: var(--h6, 12px);
+  line-height: 0;
+  vertical-align: baseline; 
+}
+sub { bottom: -0.25em; }
+sup { top: -0.5em; }
+cite { 
+  display: inline-block; 
+  width: 100%;margin-left: auto; 
+  text-align: right; 
+  font-size: 0.875em;
+}
+/* #endregion Text Formatting */
 
 
-  /* #region Text Formatting */
-  a, a:visited {
-    color: var(--link-color, #0000EE);
-    &:active { text-decoration: none; }
-  }  
-  header a, nav a, a.unset {
-    color: inherit;
-    &:not(:hover),
-    &:active { text-decoration: none; }
+/* #region embedded */
+iframe { border-style: none; }
+/* #endregion embedded */
+
+
+/* #region form */
+input:not([type="checkbox"], [type="radio"]),
+button, textarea, select {
+  height: 1.5rem;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  border-radius: 0.25em;
+  vertical-align: var(--vertical-align, top); }
+textarea { margin: 0; }
+fieldset { margin: 0 0 0.5rem; }
+::placeholder {
+  color: inherit;
+  opacity: 0.54; }
+/* #endregion form */
+
+
+/* #region utility */
+[hidden] { display: none; }
+.currentColor { color: currentColor; }
+/* #endregion utility */
+/* #endregion Defaults ******************************/
+
+
+/* #region Forms - July 2025  */
+input:not([type="checkbox"], [type="radio"]),
+select, textarea, button, a.button {
+  display: inline flow-root;
+  font-family: inherit;
+  font-size: calc(1em - 2px);
+  line-height: 1.5;
+  height: var(--button-height);
+  max-width: 100%;
+  padding: 0 1ch ;
+  color: var(--fg-button, inherit);
+  background-color: var(--bg-button, inherit);
+  border: 1px solid var(--border-color, #ccc);
+  border-radius: var(--border-radius, 0.25em);
+  overflow: hidden;
+  vertical-align: var(--vertical-align);
+} 
+select[multiple] {
+  height: initial;
+}
+
+
+/* #region buttons */
+button, select, a.button, input[type="button"],
+input[type="submit"], input[type="reset"], 
+input[type="image"], input[type="color"] {
+  appearance: button;  
+  cursor: pointer;
+  &:active:not(:disabled) {     
+    color: light-dark(hsl(0 0 27 / 0.5), hsl(0 0 70 / 0.3));
+    outline: 0.1px solid var(--outline-color);
   }
-  code, kbd, samp {
-    font-family: var(--monospace, monospace); 
-    font-size: var(--h5); 
+}
+a.button { text-decoration: unset; }
+input[type="color"] {
+  width: 3em;
+  padding: 0.375em;
+}
+button.unset, button.link {
+  font-size: 1em;
+  line-height: var(--line-height);
+  color: currentColor;
+  background-color: unset;
+  text-align: unset;
+  height: unset;
+  padding: 0; 
+  border: 0;
+  box-shadow: 0;
+  &:active:not(:disabled) { 
+    box-shadow: unset;
+    outline: none;
   }
-  abbr[title] {
-    text-decoration: underline;
-    text-decoration: underline dotted; 
+}
+button.unset:has(svg) { line-height: 0; }
+button.link {
+  &:hover:not(:disabled) {
+    text-decoration: solid underline;
   }
-  b, strong { font-weight: bolder; }
-  small {
-    font-size: var(--h5, 14px);
-    line-height: 1; 
+}
+/* #endregion buttons */
+
+
+/* #region textbox */
+input[type="text"],input[type="number"],input[type="search"],input[type="email"],input[type="password"],input[type="tel"], input[type="url"],input[type="date"],input[type="week"],input[type="month"],input[type="time"],input[type="datetime-local"],input[type="datetime"], textarea {
+  &:focus {
+    border-color: var(--outline-color);
+    outline: 1px solid var(--outline-color);
   }
-  sub, sup {
-    position: relative;
-    font-size: var(--h6, 12px);
+}
+textarea {
+  height: unset;
+}
+input[type="number"] {
+  width: 6rem;
+  padding-right: 0;
+  min-width: 4rem;
+}
+/* #endregion textbox */
+
+
+/* #region checkbox */
+label:has([type="checkbox"], [type="radio"]) {
+  display: inline-flex;
+  width: max-content;
+  align-items: center;
+  gap: 0 0.25ch;
+  cursor: pointer;
+  & [type="checkbox"], [type="radio"] {
     line-height: 0;
-    vertical-align: baseline; 
   }
-  sub { bottom: -0.25em; }
-  sup { top: -0.5em; }
-  cite { 
-    display: inline-block; 
-    width: 100%;margin-left: auto; 
-    text-align: right; 
-    font-size: 0.875em;
-  }
-  /* #endregion Text Formatting */
-
-
-  /* #region embedded */
-  iframe { border-style: none; }
-  /* #endregion embedded */
-
-
-  /* #region form */
-  input:not([type="checkbox"], [type="radio"]),
-  button, textarea, select {
-    height: 1.5rem;
-    font-family: inherit;
-    border: 1px solid #ccc;
-    border-radius: 0.25em;
-    vertical-align: var(--vertical-align, top); }
-  textarea { margin: 0; }
-  fieldset { margin: 0 0 0.5rem; }
-  ::placeholder {
-    color: inherit;
-    opacity: 0.54; }
-  /* #endregion form */
-
-
-  /* #region utility */
-  [hidden] { display: none; }
-  .currentColor { color: currentColor; }
-  /* #endregion utility */
-  /* #endregion Defaults ******************************/
 }
 
+[type="checkbox"], [type="radio"] {
+  --cb-size: 1em;
+  appearance: unset;
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  font-size: inherit;
+  height: 1.5em;
+  width: 1.5em;
+  /* line-height: unset; */
+  margin: 0;
+  background-color: unset;
+  border: none;
+  vertical-align: var(--vertical-align);
+  user-select: none;
+  overflow: hidden;
+  cursor: pointer;
 
-@layer forms {
-  /* #region Forms - July 2025  */
-  input:not([type="checkbox"], [type="radio"]),
-  select, textarea, button, a.button {
-    display: inline flow-root;
-    font-family: inherit;
-    font-size: calc(1em - 2px);
-    line-height: 1.5;
-    height: var(--button-height);
-    max-width: 100%;
-    padding: 0 1ch ;
-    color: var(--fg-button, inherit);
-    background-color: var(--bg-button, inherit);
-    border: 1px solid var(--border-color, #ccc);
-    border-radius: var(--border-radius, 0.25em);
-    overflow: hidden;
-    vertical-align: var(--vertical-align);
+  &::before, &::after {
+    position: absolute;
+    top: 0.3125em;
+    box-sizing: border-box;
+    content: "";
+    height:var(--cb-size);
+    width:var(--cb-size);
+    transition: color var(--duration),
+      background-color var(--duration);
+  }
+  &::after { scale: 0; }
+  &:checked::after { scale: 1; }
+  &::before {    
+    background-color: var(--bg-button);
+    border: 1px solid var(--border-color);
+  }    
+  &::after {
+    mask-size:var(--cb-size);
+    mask-repeat: no-repeat;
+    mask-position: center;
+    background-color: var(--fg);
+  }
+}
+[type="checkbox"] {
+  &::before {
+    border-radius: var(--border-radius); }
+  &::after {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' style='fill: none; stroke: currentColor; stroke-width: 1.0625'%3E%3Cpath d='m 4,7.5 3,3 5,-5'/%3E%3C/svg%3E%0A");
   } 
-  select[multiple] {
-    height: initial;
+  &::after {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' style='fill: none; stroke: currentColor; stroke-width: 1.5'%3E%3Cpath d='M 12.5,5.5 7,11 3.5,7.5'/%3E%3C/svg%3E%0A");
   }
-
-
-  /* #region buttons */
-  button, select, a.button, input[type="button"],
-  input[type="submit"], input[type="reset"], 
-  input[type="image"], input[type="color"] {
-    appearance: button;  
-    cursor: pointer;
-    &:active:not(:disabled) {     
-      color: light-dark(hsl(0 0 27 / 0.5), hsl(0 0 70 / 0.3));
-      outline: 0.1px solid var(--outline-color);
-    }
-  }
-  a.button { text-decoration: unset; }
-  input[type="color"] {
-    width: 3em;
-    padding: 0.375em;
-  }
-  button.unset, button.link {
-    font-size: 1em;
-    line-height: var(--line-height);
-    color: currentColor;
-    background-color: unset;
-    text-align: unset;
-    height: unset;
-    padding: 0; 
-    border: 0;
-    box-shadow: 0;
-    &:active:not(:disabled) { 
-      box-shadow: unset;
-      outline: none;
-    }
-  }
-  button.unset:has(svg) { line-height: 0; }
-  button.link {
-    &:hover:not(:disabled) {
-      text-decoration: solid underline;
-    }
-  }
-  /* #endregion buttons */
-
-
-  /* #region textbox */
-  input[type="text"],input[type="number"],input[type="search"],input[type="email"],input[type="password"],input[type="tel"], input[type="url"],input[type="date"],input[type="week"],input[type="month"],input[type="time"],input[type="datetime-local"],input[type="datetime"], textarea {
-    &:focus {
-      border-color: var(--outline-color);
-      outline: 1px solid var(--outline-color);
-    }
-  }
-  textarea {
-    height: unset;
-  }
-  input[type="number"] {
-    width: 6rem;
-    padding-right: 0;
-    min-width: 4rem;
-  }
-  /* #endregion textbox */
-
-
-  /* #region checkbox */
-  label:has([type="checkbox"], [type="radio"]) {
-    display: inline-flex;
-    width: max-content;
-    align-items: center;
-    gap: 0 0.25ch;
-    cursor: pointer;
-    & [type="checkbox"], [type="radio"] {
-      line-height: 0;
-    }
-  }
-
-  [type="checkbox"], [type="radio"] {
-    --cb-size: 1em;
-    appearance: unset;
-    position: relative;
-    display: inline-grid;
-    place-items: center;
-    font-size: inherit;
-    height: 1.5em;
-    width: 1.5em;
-    /* line-height: unset; */
-    margin: 0;
-    background-color: unset;
-    border: none;
-    vertical-align: var(--vertical-align);
-    user-select: none;
-    overflow: hidden;
-    cursor: pointer;
-
-    &::before, &::after {
-      position: absolute;
-      top: 0.3125em;
-      box-sizing: border-box;
-      content: "";
-      height:var(--cb-size);
-      width:var(--cb-size);
-      transition: color var(--duration),
-        background-color var(--duration);
-    }
-    &::after { scale: 0; }
-    &:checked::after { scale: 1; }
-    &::before {    
-      background-color: var(--bg-button);
-      border: 1px solid var(--border-color);
-    }    
-    &::after {
-      mask-size:var(--cb-size);
-      mask-repeat: no-repeat;
-      mask-position: center;
-      background-color: var(--fg);
-    }
-  }
-  [type="checkbox"] {
-    &::before {
-      border-radius: var(--border-radius); }
-    &::after {
-      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' style='fill: none; stroke: currentColor; stroke-width: 1.0625'%3E%3Cpath d='m 4,7.5 3,3 5,-5'/%3E%3C/svg%3E%0A");
-    } 
-    &::after {
-      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' style='fill: none; stroke: currentColor; stroke-width: 1.5'%3E%3Cpath d='M 12.5,5.5 7,11 3.5,7.5'/%3E%3C/svg%3E%0A");
-    }
-  }
-  [type="radio"] {
-    &::before { border-radius: 50%; }
-    &::after {
-      mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cy='8' cx='8' r='4'/%3E%3C/svg%3E%0A");
-      opacity: 0.8;
-    }
-  }
-  /* #endregion checkbox */
-
-
-  :disabled {
-    cursor: default;
-    color: var(--fg-3);
-  }
-  /* #endregion Forms */
 }
+[type="radio"] {
+  &::before { border-radius: 50%; }
+  &::after {
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cy='8' cx='8' r='4'/%3E%3C/svg%3E%0A");
+    opacity: 0.8;
+  }
+}
+/* #endregion checkbox */
+
+
+:disabled {
+  cursor: default;
+  color: var(--fg-3);
+}
+/* #endregion Forms */
+
 
 
 :root {
