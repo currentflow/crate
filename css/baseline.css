@@ -81,9 +81,9 @@ html {
   -webkit-tap-highlight-color: transparent;
   tab-size: 2;
 }
-:where(body, h1, h2, h3, h4, h5, h6, 
+body, h1, h2, h3, h4, h5, h6, 
 p, pre, blockquote, fieldset, figure, 
-ol, ul, dl, dd, menu) { margin: 0; }
+ol, ul, dl, dd, menu { margin: 0; }
 ul, ol, menu { padding-left: 2ch; }
 input, button, textarea, select { font-family: inherit; }
 img, picture, figure {
