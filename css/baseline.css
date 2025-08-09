@@ -1,81 +1,78 @@
-/* #region baseline:concatenated - August 2025 - debug */
-@layer reset, base, forms;
+/* #region baseline:concatenated - unlayered - August 2025 - debug */
 
-@layer base {
-  :root {
-    /* color-scheme: dark; */
-    /* color-scheme: light; */
-    --font-size: 16px;
-    --line-height: calc(1em + 0.5rem);
-    --line-height-p: 1.375;
-    --doc-height: 100%; 
+:root {
+  /* color-scheme: dark; */
+  /* color-scheme: light; */
+  --font-size: 16px;
+  --line-height: calc(1em + 0.5rem);
+  --line-height-p: 1.375;
+  --doc-height: 100%; 
 
-    --fg-1: light-dark(hsl(0 0 27), hsl(0 0 70)) ;
-    --fg-2: light-dark(hsl(240 8 13), hsl(0 0 80));
-    --fg-3: light-dark(hsl(0 0 27 / 0.4), hsl(0 0 65 / 0.4));
-    --fg: var(--fg-1);
-    --fg-strong: var(--fg-2);
-    --fg-muted: var(--fg-3);
-    
-    --bg-1: light-dark(hsl(206 30 100), hsl(0 0 13));
-    --bg-2: light-dark(hsl(206 40 94), hsl(0 0 10));
-    --bg-3: light-dark(hsl(206 40 88), hsl(0 0 16));
-    --bg-4: light-dark(hsl(206 60 85), hsl(0 0 8));
-    --bg: var(--bg-1);
-    --bg-panel: var(--bg-2);
-    --bg-accent: var(--bg-3);
+  --fg-1: light-dark(hsl(0 0 27), hsl(0 0 70)) ;
+  --fg-2: light-dark(hsl(240 8 13), hsl(0 0 80));
+  --fg-3: light-dark(hsl(0 0 27 / 0.4), hsl(0 0 65 / 0.4));
+  --fg: var(--fg-1);
+  --fg-strong: var(--fg-2);
+  --fg-muted: var(--fg-3);
+  
+  --bg-1: light-dark(hsl(206 30 100), hsl(0 0 13));
+  --bg-2: light-dark(hsl(206 40 94), hsl(0 0 10));
+  --bg-3: light-dark(hsl(206 40 88), hsl(0 0 16));
+  --bg-4: light-dark(hsl(206 60 85), hsl(0 0 8));
+  --bg: var(--bg-1);
+  --bg-panel: var(--bg-2);
+  --bg-accent: var(--bg-3);
 
-    --primary: hsl(206 70 60);
-    --accent: hsl(176 70 50);
-    --warning: hsl(26 70 60);
-    --error: hsl(356 70 60);
+  --primary: hsl(206 70 60);
+  --accent: hsl(176 70 50);
+  --warning: hsl(26 70 60);
+  --error: hsl(356 70 60);
 
-    --link-color: linktext;     
-    --vue-green: hsl(150 50 50);
-    --active-color: hsl(150 50 50);
-    /* --active-color: light-dark(
-      hsl(210 100 50),
-      hsl(207 100 57));  */
-    
-    --button-height: calc((1em + 2px) * 1.5);
-    --button-font: inherit;
-    --fg-button: var(--fg);
-    --bg-button: light-dark(hsl(206 40 96), hsl(0 0 18));
-    --bg-disabled: hsl(0 0 50 / 0.05);
+  --link-color: linktext;     
+  --vue-green: hsl(150 50 50);
+  --active-color: hsl(150 50 50);
+  /* --active-color: light-dark(
+    hsl(210 100 50),
+    hsl(207 100 57));  */
+  
+  --button-height: calc((1em + 2px) * 1.5);
+  --button-font: inherit;
+  --fg-button: var(--fg);
+  --bg-button: light-dark(hsl(206 40 96), hsl(0 0 18));
+  --bg-disabled: hsl(0 0 50 / 0.05);
 
-    --hero: 2em;
-    --h1: 1.5em;
-    --h2: 1.25em;
-    --h3: 1.125em;
-    --h4: 1em;
-    --h5: 0.875em;
-    --h6: 0.75em;
-    --heading-line-height: calc(1em + 0.25rem);
-    --weight-700: 700;
-    --weight-600: 600;
+  --hero: 2em;
+  --h1: 1.5em;
+  --h2: 1.25em;
+  --h3: 1.125em;
+  --h4: 1em;
+  --h5: 0.875em;
+  --h6: 0.75em;
+  --heading-line-height: calc(1em + 0.25rem);
+  --weight-700: 700;
+  --weight-600: 600;
 
-    --border-color: light-dark(
-      hsl(207 20 80), 
-      hsl(0 0 40 / 0.2));
-    --border: 1px solid var(--border-color);
-    --border-radius: 0.25em; 
-    
-    --outline-color: light-dark(
-      hsl(207 20 70),
-      hsl(0 0 40));
+  --border-color: light-dark(
+    hsl(207 20 80), 
+    hsl(0 0 40 / 0.2));
+  --border: 1px solid var(--border-color);
+  --border-radius: 0.25em; 
+  
+  --outline-color: light-dark(
+    hsl(207 20 70),
+    hsl(0 0 40));
 
-    --max-p-width: 65ch;
-    --sans-serif: system-ui, 'Segoe UI', 
-      Roboto, Helvetica, Arial, sans-serif, 
-      'Apple Color Emoji', 'Segoe UI Emoji';
-    --serif: Georgia, ui-serif, serif;    
-    --monospace: ui-monospace, Consolas, "Courier New", monospace; 
-    --vertical-align: top;
-    --duration: 500ms;
-  }
+  --max-p-width: 65ch;
+  --sans-serif: system-ui, 'Segoe UI', 
+    Roboto, Helvetica, Arial, sans-serif, 
+    'Apple Color Emoji', 'Segoe UI Emoji';
+  --serif: Georgia, ui-serif, serif;    
+  --monospace: ui-monospace, Consolas, "Courier New", monospace; 
+  --vertical-align: top;
+  --duration: 500ms;
 }
 
-@layer reset {
+
 /* #region Reset - July 2025  */
 *, *::before, *::after { box-sizing: border-box; }
 html { 
@@ -239,9 +236,8 @@ fieldset { margin: 0 0 0.5rem; }
 /* #endregion Utility */
 /* #endregion Defaults 
 ************************ */
-}
 
-@layer forms {
+
 /* #region Forms - July 2025  */
 input:not([type="checkbox"], [type="radio"]),
 select, textarea, button, a.button {
@@ -400,5 +396,4 @@ label:has([type="checkbox"], [type="radio"]) {
   color: var(--fg-3);
 }
 /* #endregion Forms */
-}
 /* #endregion baseline */
