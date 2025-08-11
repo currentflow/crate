@@ -1,4 +1,4 @@
-/* #region baseline:concatenated - unlayered - August 2025 - debug */
+/* #region baseline - August 2025 */
 
 :root {
   /* color-scheme: dark; */
@@ -72,7 +72,6 @@
   --duration: 500ms;
 }
 
-
 /* #region Reset - July 2025  */
 *, *::before, *::after { box-sizing: border-box; }
 html { 
@@ -82,8 +81,7 @@ html {
   -webkit-tap-highlight-color: transparent;
   tab-size: 2;
 }
-body, h1, h2, h3, h4, h5, h6, 
-p, pre, blockquote, fieldset, figure, 
+body, h1, h2, h3, h4, h5, h6, pre, blockquote, fieldset, figure, 
 ol, ul, dl, dd, menu { margin: 0; }
 ul, ol, menu { padding-left: 2ch; }
 input, button, textarea, select { font-family: inherit; }
@@ -91,6 +89,15 @@ img, picture, figure {
   max-width: 100%;
   height: auto;
   display: block;
+}
+p {
+  line-height: 1.3125;
+  margin: 0 0 1rem;
+  max-width: var(--max-p-width);
+}
+blockquote {
+  border-left: 1rem solid var(--bg-3);
+  padding-left: 1.5rem;
 }
 /* #endregion Reset */
 
@@ -107,6 +114,7 @@ html {
   background-color: var(--bg, canvas);
   color: var(--fg, canvastext);
   height: 100dvh;
+  scrollbar-gutter: stable both-edges;
 }
 body {
   font-size: 1em;
@@ -233,10 +241,11 @@ fieldset { margin: 0 0 0.5rem; }
 /* #region Utility */
 [popover] { padding: 0; }
 [hidden] { display: none; }
+.flex { display: flex; }
+.grid { display: grid; }
 /* #endregion Utility */
 /* #endregion Defaults 
 ************************ */
-
 
 /* #region Forms - July 2025  */
 input:not([type="checkbox"], [type="radio"]),
@@ -264,6 +273,7 @@ select[multiple] {
 button, select, a.button, input[type="button"],
 input[type="submit"], input[type="reset"], 
 input[type="image"], input[type="color"] {
+  display: inline grid;
   appearance: button;  
   cursor: pointer;
   &:active:not(:disabled) {     
