@@ -1,46 +1,21 @@
-/* #region baseline - August 2025 */
 
+@layer reset, forms, theme, base;
+/* #region Base - January 2026 */
+/*, tables, vsdark ; */
+
+@layer reset {
+/* #region Reset - January 2026  */
 :root {
-  /* color-scheme: dark; */
-  /* color-scheme: light; */
+  /* Font */
   --font-size: 16px;
   --line-height: calc(1em + 0.5rem);
-  --line-height-p: 1.375;
-  --doc-height: 100%; 
-
-  --fg-1: light-dark(hsl(0 0 27), hsl(0 0 70)) ;
-  --fg-2: light-dark(hsl(240 8 13), hsl(0 0 80));
-  --fg-3: light-dark(hsl(0 0 27 / 0.4), hsl(0 0 65 / 0.4));
-  --fg: var(--fg-1);
-  --fg-strong: var(--fg-2);
-  --fg-muted: var(--fg-3);
+  --line-height-p: 1.375;  
+  --sans-serif: system-ui, 'Segoe UI', 
+    Roboto, Helvetica, Arial, sans-serif;
+  --serif: Georgia, ui-serif, serif;    
+  --monospace: ui-monospace, Consolas, "Courier New", monospace; 
   
-  --bg-1: light-dark(hsl(206 30 100), hsl(0 0 13));
-  --bg-2: light-dark(hsl(206 40 94), hsl(0 0 10));
-  --bg-3: light-dark(hsl(206 40 88), hsl(0 0 16));
-  --bg-4: light-dark(hsl(206 60 85), hsl(0 0 8));
-  --bg: var(--bg-1);
-  --bg-panel: var(--bg-2);
-  --bg-accent: var(--bg-3);
-
-  --primary: hsl(206 70 60);
-  --accent: hsl(176 70 50);
-  --warning: hsl(26 70 60);
-  --error: hsl(356 70 60);
-
-  --link-color: linktext;     
-  --vue-green: hsl(150 50 50);
-  --active-color: hsl(150 50 50);
-  /* --active-color: light-dark(
-    hsl(210 100 50),
-    hsl(207 100 57));  */
-  
-  --button-height: calc((1em + 2px) * 1.5);
-  --button-font: inherit;
-  --fg-button: var(--fg);
-  --bg-button: light-dark(hsl(206 40 96), hsl(0 0 18));
-  --bg-disabled: hsl(0 0 50 / 0.05);
-
+  /* Heading */
   --hero: 2em;
   --h1: 1.5em;
   --h2: 1.25em;
@@ -48,31 +23,21 @@
   --h4: 1em;
   --h5: 0.875em;
   --h6: 0.75em;
-  --heading-line-height: calc(1em + 0.25rem);
-  --weight-700: 700;
-  --weight-600: 600;
 
-  --border-color: light-dark(
-    hsl(207 20 80), 
-    hsl(0 0 40 / 0.2));
-  --border: 1px solid var(--border-color);
-  --border-radius: 0.25em; 
-  
-  --outline-color: light-dark(
-    hsl(207 20 70),
-    hsl(0 0 40));
+  /* Border */
+  --border: 1px solid var(--border-color, hsl(207 20 80));
+  --border-radius: 0.25em;
 
+  /* Button */
+  --button-height: calc((1em + 2px) * 1.5);
+  --button-font: inherit;
+
+  /* Misc  */
   --max-p-width: 65ch;
-  --sans-serif: system-ui, 'Segoe UI', 
-    Roboto, Helvetica, Arial, sans-serif, 
-    'Apple Color Emoji', 'Segoe UI Emoji';
-  --serif: Georgia, ui-serif, serif;    
-  --monospace: ui-monospace, Consolas, "Courier New", monospace; 
-  --vertical-align: top;
+  --vertical-align: initial;
   --duration: 500ms;
 }
 
-/* #region Reset - July 2025  */
 *, *::before, *::after { box-sizing: border-box; }
 html { 
   overflow-wrap: break-word;
@@ -83,7 +48,6 @@ html {
 }
 body, h1, h2, h3, h4, h5, h6, pre, blockquote, fieldset, figure, 
 ol, ul, dl, dd, menu { margin: 0; }
-ul, ol, menu { padding-left: 2ch; }
 input, button, textarea, select { font-family: inherit; }
 img, picture, figure {
   max-width: 100%;
@@ -95,6 +59,9 @@ p {
   margin: 0 0 1rem;
   max-width: var(--max-p-width);
 }
+pre {
+  white-space: pre-wrap;
+}
 blockquote {
   border-left: 1rem solid var(--bg-3);
   padding-left: 1.5rem;
@@ -104,8 +71,13 @@ blockquote {
 
 /* #region Defaults  ***************************/
 /* #region Document */
-html[data-theme="light"] { color-scheme: light; }
-html[data-theme="dark"]  { color-scheme: dark;  }
+html[data-theme="light"] {  
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+html[data-theme="dark"]  { 
+  color-scheme: dark;  
+}
 
 html {
   font-family: var(--sans-serif, system-ui, sans-serif);
@@ -119,21 +91,22 @@ html {
 body {
   font-size: 1em;
   color: var(--fg, inherit);
-  height: var(--doc-height, 100%);
+  height: 100%;
   min-height: 100dvh;
 }
 hr {
   height: 0;
-  margin: 1.5rem auto;
-  border: 1px none var(--border-color, #ccc);
-  border-bottom-style: solid; }
+  margin: 1rem auto;
+  border: none;
+  border-bottom: 1px solid var(--border-color, #ccc);
+}
 /* #endregion Document */
 
 
 /* #region Headings */
 .hero,h1,h2,h3,h4,h5,h6 {
   font-family: inherit;
-  color: var(--fg-stong, inherit);
+  color: var(--fg-1, inherit);
   margin: 0 0 0.25rem; 
 }
 .hero,h1,h2,h3,h4 { text-wrap: balance; }
@@ -144,26 +117,42 @@ h3, .h3 { font-size: var(--h3, 1.125em); line-height: 1.3125; }
 h4, .h4 { font-size: var(--h4, 1em); line-height: 1.5; }
 h5, .h5 { font-size: var(--h5, 0.875em); line-height: 1.5; }
 h6, .h6 { font-size: var(--h6, 0.75em); line-height: 1.5; }
-h1, h2, h3, h4 { font-weight: var(--weight-700, 700); }
-h5, h6 { font-weight: var(--weight-600, 600); }
+h1, .hero { font-weight: 700; }
+h2 { font-weight: 600; }
+h3 { font-weight: 500; }
+h4 { font-weight: 500; }
+h5, h6 { font-weight: 500; }
 /* #endregion Headings */
 
 
 /* #region Lists */
-ol, ul, dl, menu {
+menu { 
+  padding: 0;
+  margin: 0;
+  list-style-type: none; 
+}
+ol, ul, dl {
   margin: 0 0 1rem; 
   list-style-position: outside; 
 
-  ol, ul, dl, menu {
-    margin: 0;
+  ol, ul, dl {
+    padding-left: 1em;
+    margin: 0 0 0.5rem;
+    line-height: 1.6;
   }
 }
-ol.unset, ul.unset, menu,
-  ol.unset ol, ul.unset ul  {
+:is(ol, ul).unset {
   list-style-type: none;
-  padding: 0; 
+  padding: 0;
   margin: unset;
+
+  :is(ol, ul) {
+    list-style-type: none;
+    padding: 0; 
+    margin: unset;
+  }
 }
+
 dl {
   display: grid;
   list-style-type: none;
@@ -173,16 +162,20 @@ dl {
 dt { 
   font-weight: 600; 
   &::after { content: ":"; }
+  display: initial;
+}
+dd { 
+  display: grid;
 }
 /* #endregion Lists */
 
 
 /* #region Text Formatting */
-a, a:visited {
+a {
   color: var(--link-color, #0000EE);
   &:active { text-decoration: none; }
 }  
-header a, nav a, a.unset {
+header a, nav a, .route a, a.unset {
   color: inherit;
   &:not(:hover),
   &:active { text-decoration: none; }
@@ -239,22 +232,26 @@ fieldset { margin: 0 0 0.5rem; }
 
 
 /* #region Utility */
-[popover] { padding: 0; }
 [hidden] { display: none; }
 .flex { display: flex; }
 .grid { display: grid; }
+.b { font-weight: 600; }
+.i, .em { font-style: italic; }
+.contents { display: contents; }
 /* #endregion Utility */
 /* #endregion Defaults 
 ************************ */
+}
 
-/* #region Forms - July 2025  */
+@layer forms {
+/* #region Forms - January 2026  */
 input:not([type="checkbox"], [type="radio"]),
-select, textarea, button, a.button {
+select, textarea, button, a.button, a.btn {
   display: inline flow-root;
-  font-family: inherit;
+  font-family: var(--sans-serif);
   font-size: calc(1em - 2px);
   line-height: 1.5;
-  height: var(--button-height, 1.5);
+  height: var(--button-height, 1.5em);
   max-width: 100%;
   padding: 0 1ch ;
   color: var(--fg-button, inherit);
@@ -268,20 +265,24 @@ select[multiple] {
   height: initial;
 }
 
-
 /* #region Buttons */
-button, select, a.button, input[type="button"],
+button, select, a.button, a.btn, input[type="button"],
 input[type="submit"], input[type="reset"], 
 input[type="image"], input[type="color"] {
   display: inline grid;
   appearance: button;  
   cursor: pointer;
   &:active:not(:disabled) {     
-    color: light-dark(hsl(0 0 27 / 0.5), hsl(0 0 70 / 0.3));
-    outline: 0.1px solid var(--outline-color);
+    color: light-dark(hsl(0 0 27 / 0.5), hsl(0 0 70 / 0.8));
+    outline: 0.1px solid var(--outline-color,hsl(207 20 70));
   }
 }
-a.button { text-decoration: unset; }
+
+input[type="submit"], input[type="reset"], input[type="button"] {
+  padding-bottom: 2px;
+}
+
+a.button, a.btn { text-decoration: unset; }
 input[type="color"] {
   width: 3em;
   padding: 0.375em;
@@ -299,16 +300,15 @@ button.unset, button.link {
   &:active:not(:disabled) { 
     box-shadow: unset;
     outline: none;
-   }
+  }
+  &:has(svg) { line-height: 0; }
 }
-button.unset:has(svg) { line-height: 0; }
 button.link {
    &:hover:not(:disabled) {
     text-decoration: solid underline;
    }
 }
 /* #endregion Buttons */
-
 
 /* #region Textbox */
 input[type="text"],input[type="number"],input[type="search"],input[type="email"],input[type="password"],input[type="tel"], input[type="url"],input[type="date"],input[type="week"],input[type="month"],input[type="time"],input[type="datetime-local"],input[type="datetime"], textarea {
@@ -325,19 +325,28 @@ input[type="number"] {
   padding-right: 0;
   min-width: 4rem;
 }
+[type="text"].unset {
+  border: unset;
+  border-radius: unset;
+  background: unset;
+  padding: unset;
+  font-size: inherit;
+  color: inherit;
+  outline: 0;
+  &:focus {
+    box-shadow: 0 2px 0 var(--outline-color);
+  }
+}
 /* #endregion Textbox */
 
 
 /* #region Checkbox */
 label:has([type="checkbox"], [type="radio"]) {
-  display: inline-flex;
+  vertical-align: var(--vertical-align);
+  display: inline flex;
   width: max-content;
-  align-items: center;
-  gap: 0 0.25ch;
+  gap: 0 0.33rem;
   cursor: pointer;
-  & [type="checkbox"], [type="radio"] {
-    line-height: 0;
-  }
 }
 
 [type="checkbox"], [type="radio"] {
@@ -349,7 +358,6 @@ label:has([type="checkbox"], [type="radio"]) {
   font-size: inherit;
   height: 1.5em;
   width: 1.5em;
-  /* line-height: unset; */
   margin: 0;
   background-color: unset;
   border: none;
@@ -359,10 +367,10 @@ label:has([type="checkbox"], [type="radio"]) {
   cursor: pointer;
 
   &::before, &::after {
+    content: "";
     position: absolute;
     top: 0.3125em;
     box-sizing: border-box;
-    content: "";
     height:var(--cb-size);
     width:var(--cb-size);
     transition: color var(--duration),
@@ -371,8 +379,8 @@ label:has([type="checkbox"], [type="radio"]) {
   &::after { scale: 0; }
   &:checked::after { scale: 1; }
   &::before {    
-    background-color: var(--bg-button);
-    border: 1px solid var(--border-color);
+    background-color: var(--bg-button, inherit);
+    border: 1px solid var(--border-color, hsl(207 20 80));
   }    
   &::after {
     mask-size:var(--cb-size);
@@ -384,9 +392,6 @@ label:has([type="checkbox"], [type="radio"]) {
 [type="checkbox"] {
   &::before {
     border-radius: var(--border-radius); }
-  &::after {
-    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' style='fill: none; stroke: currentColor; stroke-width: 1.0625'%3E%3Cpath d='m 4,7.5 3,3 5,-5'/%3E%3C/svg%3E%0A");
-  } 
   &::after {
     mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' style='fill: none; stroke: currentColor; stroke-width: 1.5'%3E%3Cpath d='M 12.5,5.5 7,11 3.5,7.5'/%3E%3C/svg%3E%0A");
   }
@@ -400,10 +405,72 @@ label:has([type="checkbox"], [type="radio"]) {
 }
 /* #endregion Checkbox */
 
-
-:disabled {
+/* #region Utility_forms */
+[disabled], :disabled  { 
+  color: hsl(from currentColor h s l / 0.2);
+  opacity: 0.5;
   cursor: default;
-  color: var(--fg-3);
 }
+input.autosize, textarea.autosize {
+	field-sizing: content;
+	text-overflow: ellipsis;
+}
+/* #endregion Utility_forms */
 /* #endregion Forms */
-/* #endregion baseline */
+}
+
+@layer theme {
+/* #region Theme Default - January 2026 */
+  :root {
+    /* foreground */
+    --fg-1: light-dark(hsl(0 0 27), hsl(0 0 70)) ;
+    --fg-2: light-dark(hsl(0 0 27 / 0.6), hsl(0 0 65));
+    --fg-3: light-dark(hsl(0 0 27 / 0.6), hsl(0 0 65 / 0.6));
+    --fg-muted: light-dark(hsl(0 0 27 / 0.4), hsl(0 0 65 / 0.4));
+    --fg: var(--fg-1);
+
+    /* background */
+    --bg-1: light-dark(hsl(206 30 100), hsl(0 0 12));
+    --bg-2: light-dark(hsl(206 40 94), hsl(0 0 16));
+    --bg-3: light-dark(hsl(206 40 88), hsl(0 0 16));
+    --bg-4: light-dark(hsl(206 60 85), hsl(0 0 8));
+    --bg: var(--bg-1);
+    --bg-active: hsl(0 0 0 / 0.067);
+    --bg-hover: hsl(0 0 0 / 0.067);
+    --bg-panel: var(--bg-2);
+
+    /* border */
+    --border-color: light-dark(
+      hsl(207 20 80), 
+      hsl(0 0 40 / 0.8));
+    --outline-color: light-dark(
+      hsl(207 20 70),
+      hsl(0 0 40));
+
+    /* button */
+    --fg-button: var(--fg);
+    --bg-button: light-dark(hsl(206 40 96), hsl(0 0 18));
+    --bg-disabled: hsl(0 0 50 / 0.05);
+
+    /* accent */
+    --primary: hsl(206 70 60);
+    --accent: hsl(176 70 50);
+    --warning: hsl(26 70 60);
+    --error: hsl(356 70 60);
+
+    --link-color: linktext;     
+    --vue-green: hsl(150 50 50);
+    --active-color: hsl(150 50 50);
+  }
+/* #endregion Theme Default */
+}
+@layer base {
+  :root {
+    /* --sans-serif: "Open Sans", sans-serif; */
+    /* --monospace: "Source Code Pro", monospace; */
+    --font-size: 16px;   
+    /* color-scheme: dark; */
+    /* color-scheme: light; */
+  }
+}
+/* #endregion Base */
