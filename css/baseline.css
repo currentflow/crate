@@ -472,6 +472,6 @@ input.autosize, textarea.autosize {
     /* color-scheme: dark; */
     /* color-scheme: light; */
   }
-	body { margin: 0; }	
 }
 /* #endregion Base */
+body { margin: 0 !important; }	
